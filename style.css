@@ -21,17 +21,25 @@ body {
 body {
     position: relative;
     z-index: 0;
-    background-color: black;
     color: white;
-    /* plano cartesiano */
+    overflow: hidden;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background-color: black;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 100px 100px;
-    /* tamanho da grade */
     background-position: center;
-    overflow: hidden;
+
+    pointer-events: none;
 }
+
 
 /* Utilitários */
 .center {
