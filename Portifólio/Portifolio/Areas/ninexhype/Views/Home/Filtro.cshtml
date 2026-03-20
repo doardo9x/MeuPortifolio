@@ -1,0 +1,41 @@
+@model IEnumerable<Portifolio.Areas.NinexHype.Models.Produto>
+
+@{
+    ViewData["Title"] = "Filtro " + ViewBag.Categoria;
+}
+<link rel="stylesheet" href="~/ninexhype-css/Filtros.css" />
+<div class="tituloResultado titulofiltro">
+    <h2 class="normalText fs-1">@ViewBag.Categoria</h2>
+</div>
+
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-warning text-center mt-4" role="alert">
+        Nenhum produto disponível nesta categoria no momento.
+    </div>
+}
+else
+{
+  <section class="contRoupa">
+        <div class="carrosselRoupas">
+            @foreach (var produto in Model)
+            {
+                    <div class="card cardCarrossel" style="width: 12rem;">
+                        <a asp-action="Produto" asp-route-id="@produto.Id">
+                            <img class="card-img-top"
+                                src="@(produto.Fotos.Count == 0 
+                                    ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                    : produto.Fotos[0].ArquivoFoto)" 
+                                alt="@produto.Nome" />
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title nomeProdutoCarrossel">@produto.Nome</h5>
+                            <p class="precoProduto card-text">R$ @produto.ValorVenda.ToString("N2")</p>
+                        </div>
+                    </div>
+            }
+        </div>
+    </section>
+}

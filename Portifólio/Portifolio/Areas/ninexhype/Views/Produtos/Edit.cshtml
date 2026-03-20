@@ -1,0 +1,140 @@
+@model Portifolio.Areas.NinexHype.Models.Produto
+@{
+    ViewData["Title"] = "Editar Produto";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="~/ninexhype-css/EditProduto.css">
+
+<div class="container">
+    <div class="areaTitulo">
+        <h1 class="detalhesTitulo">Editar Produto</h1>
+    </div>
+
+    <div class="main">
+        <div class="quadradoEsq">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="primeiraLinha">
+                    <label asp-for="Nome" class="tituloCampo fs-3"></label>
+                    <input asp-for="Nome" class="form-control inputCampo border0" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="segundaLinha">
+                    <div class="campoDuplo">
+                        <label asp-for="Categoria" class="tituloCampo fs-3"></label>
+                        <select asp-for="CategoriaId" class="form-control inputCampo border0"
+                            asp-items="@(ViewData["CategoriaId"] as SelectList)"></select>
+                        <span asp-validation-for="CategoriaId" class="text-danger"></span>
+                    </div>
+                    <div class="campoDuplo">
+                        <label asp-for="Genero" class="tituloCampo fs-3"></label>
+                        <select asp-for="Genero" class="form-control inputCampo border0"
+                            asp-items="@(ViewBag.Generos as SelectList)"></select>
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="terceiraLinha">
+                    <div class="campoDuplo">
+                        <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorCusto" type="number" class="form-control inputCampo border0" step="0.01"
+                            value="@Model.ValorCusto.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)" />
+                        <small class="text-muted">R$ @Model.ValorCusto.ToString("N2")</small>
+                        <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                    </div>
+
+                    <div class="campoDuplo">
+                        <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorVenda" type="number" class="form-control inputCampo border0" step="0.01"
+                            value="@Model.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)" />
+                        <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="quintaLinha">
+                    <label asp-for="QtdeEstoque" class="tituloCampo fs-3"></label>
+                    <input asp-for="QtdeEstoque" class="form-control inputCampo border0" />
+                    <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
+                </div>
+
+                <div class="quintaLinha">
+                    <label asp-for="Descricao" class="tituloCampo fs-3"></label>
+                    <textarea asp-for="Descricao" class="form-control inputCampo border0"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+
+                <div class="sextaLinha">
+                    <input type="submit" value="Salvar" class="btnSalvar" />
+
+                    <a asp-action="Index" class="btnVoltar">Voltar</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="quadradoDir">
+
+            <div class="rolagemVertical">
+                <div class="fotosExistentes">
+                    @foreach (var foto in Model.Fotos)
+                    {
+                        <div class="fotoExistente">
+
+                            <img src="@foto.ArquivoFoto" class="previewImg" />
+
+                            <form asp-action="ExcluirFoto" class="divBtnExcluir" method="post">
+                                <input type="hidden" name="fotoId" value="@foto.Id" />
+                                <button class="botaoExcluirFoto" type="submit" class="btn btn-danger btn-sm">Excluir
+                                    Imagem</button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <form asp-action="AdicionarFoto" method="post" enctype="multipart/form-data">
+                <div class="containerEditFoto">
+
+                    <input type="hidden" name="produtoId" value="@Model.Id" />
+
+                    @* cursor pointer não funciona *@
+
+                    <!-- Botão personalizado -->
+                    <div class="divBotoes">
+                        <div class="file-upload-wrapper">
+                            <label class="btnSelecionarImagem file-upload-label">
+                                Selecionar
+                                <input class="hidden-file-input" type="file" name="novasFotos" multiple
+                                    accept="image/*" />
+                            </label>
+
+                        </div>
+
+                        <button type="submit" class="btnAddFoto">Adicionar</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+            @* <form asp-action="AdicionarFoto" method="post" enctype="multipart/form-data">
+                <div class="containerEditFoto">
+
+                    <input type="hidden" name="produtoId" value="@Model.Id" />
+                    <input type="file" name="novasFotos" multiple />
+
+                    <button type="submit" class="btnAddFoto btn btn-primary">Adicionar Foto</button>
+                </div>
+            </form> *@
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

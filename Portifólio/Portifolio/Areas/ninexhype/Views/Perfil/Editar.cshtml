@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="~/ninexhype-css/perfil.css">
+
+@model Portifolio.Areas.NinexHype.Models.Usuario
+@{
+    ViewData["Title"] = "Editar Perfil";
+}
+
+<div class="container">
+    <h2 class="letraBranca">Editar Perfil</h2>
+    <div class="main">
+
+        <form asp-action="Editar" method="post" enctype="multipart/form-data" class="formMerda">
+
+            <div class="quadradoEsq">
+                <div class="campoFoto">
+                    @if (!string.IsNullOrEmpty(Model.Foto))
+                    {
+                        <img src="@Url.Content("~/ninexhype-img/usuarios/" + Model.Foto)" id="previewImage" />
+                    }
+                    else
+                    {
+                        <img src="~/ninexhype-img/usuarios/default.png" class="fotoUsuario" id="previewImage" />
+                    }
+
+                    <label for="fotoInput" class="btnAdicionarFoto letraBranca">Alterar Foto</label>
+                    <input type="file" name="foto" id="fotoInput" class="inputFoto" accept="image/*" />
+                </div>
+            </div>
+
+            <div class="quadradoDir">
+                <div class="campos">
+                    <label class="letraBranca fs-3">Nome</label>
+                    <input asp-for="Nome" class="form-control inputCampo" />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">Email</label>
+                    <input asp-for="Email" class="form-control inputCampo" />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">CPF</label>
+                    <input asp-for="Cpf" class="form-control inputCampo" />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">Data de Nascimento</label>
+                    <input asp-for="DataNascimento" class="form-control inputCampo" type="date" />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">Gênero</label>
+                    <input asp-for="Genero" class="form-control inputCampo" />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">Telefone Alternativo</label>
+                    <input asp-for="TelefoneAlternativo" class="form-control inputCampo" />
+                </div>
+            </div>
+
+            @if (Model.Endereco != null)
+            {
+                <h5 class="letraRosa mt-4">Endereço</h5>
+
+                <div class="mb-3">
+                    <label class="form-label">Rua</label>
+                    <input asp-for="Endereco.Logradouro" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Número</label>
+                    <input asp-for="Endereco.Numero" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Complemento</label>
+                    <input asp-for="Endereco.Complemento" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bairro</label>
+                    <input asp-for="Endereco.Bairro" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cidade</label>
+                    <input asp-for="Endereco.Cidade" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Estado</label>
+                    <input asp-for="Endereco.Estado" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">CEP</label>
+                    <input asp-for="Endereco.Cep" class="form-control" />
+                </div>
+            }
+
+            <div class="divBotoes">
+                <button type="submit" class="btn btnSalvar">Salvar</button>
+                <a asp-action="Index" class="btn btnCancelar">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger mt-2"></div>
+</div>
+
+<script>
+    // pré-visualização da imagem antes do upload
+    document.getElementById('fotoInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

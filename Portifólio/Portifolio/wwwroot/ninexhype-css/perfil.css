@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: auto;
+}
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.letraBranca {
+    color: white;
+}
+
+.letraRosa {
+    color: var(--Destaque-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--main-BG-color);
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    width: 80%;
+    height: auto;
+    background-color: var(--RoxoForte-color);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 20px;
+    flex-direction: row;
+
+    border: 1px solid var(--RoxoClaro-color);
+}
+
+.quadradoEsq {
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quadradoDir {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+.fotoUsuario {
+    border: 3px solid var(--Destaque-color);
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.fotoInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formMerda {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.divBotoes {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.inputFoto {
+    display: none;
+}
+
+.btnAdicionarFoto {
+    text-decoration: none;
+    background-color: var(--RoxoClaro-color);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.btnAdicionarFoto:hover {
+    background-color: var(--RoxoClaroHover-color);
+}
+
+.campoFoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputCampo {
+    background-color: var(--CinzaFraco-color);
+    border: 0;
+    color: white;
+}
+
+.inputCampo:focus {
+    background-color: var(--CinzaFraco-color);
+    color: white;
+    box-shadow: 0 0 0 0;
+    outline: 1px solid var(--RoxoClaro-color);
+}
+
+.inputCampo::placeholder {
+    color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    color: white;
+}
+
+.btnSalvar {
+    text-decoration: none;
+    background-color: var(--VerdeCarrinho-color);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 20%;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnSalvar:hover {
+    background-color: var(--VerdeCarrinhoHover-color);
+    color: white;
+}
+
+.btnCancelar {
+    text-decoration: none;
+    background-color: var(--VermelhoFav-color);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 20%;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCancelar:hover {
+    background-color: var(--VermelhoFavHover-color);
+    color: white;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo {
+    width: 40%;
+    min-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+}
+
+.divBotoes {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.divBotoesEditar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .quadradoDir {
+        width: 100%;
+    }
+
+    .quadradoEsq {
+        width: 100%;
+    }
+
+    .divBotoes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.HeaderSearchBar, .HeaderIcons {
+    display: none;
+}
+    
+header{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,75 @@
+@model Portifolio.Areas.NinexHype.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAccount.cshtml";
+}
+<link rel="stylesheet" href="~/ninexhype-css/Login.css">
+
+<div class="container body">
+    <div class="row justify-content-center ">
+        <a asp-controller="Home" asp-action="Index" class="display-5 text-center ninexLogo">9xHype</a>
+
+        <div class="main">
+            <div class="card border-0 rounded-lg cardLogin">
+                <div class="card-header TextWhite">
+                    <h3 class="text-center font-weight-light my-4 TextWhite">Login</h3>
+                </div>
+
+                <div class="card-body">
+                
+                    <form asp-action="Login" method="post">
+                        <div asp-validation-summary="ModelOnly" hidden></div>
+                        <input type="hidden" asp-for="UrlRetorno" />
+
+                        <div class="campo">
+                            <label asp-for="Email" class="letraBranca fs-7"></label>
+                            <input class="letraBranca inputCampo" asp-for="Email" />
+                            <span asp-validation-for="Email" class="text-danger text-sm"></span>
+                        </div>
+                        
+                        <div class="campo">
+                            <label class="letraBranca" asp-for="Senha"></label>
+                            <input class="letraBranca inputCampo" asp-for="Senha" />
+                            <span asp-validation-for="Senha" class="text-danger text-sm"></span>
+                        </div>
+                        
+                        @* manter conectado *@
+                        <div class="containerManterConectado">
+                            <input class="checkboxConexao" asp-for="Lembrar" type="checkbox" value="" />
+                            
+                            <label class="form-check-label TextWhite" asp-for="Lembrar"></label>
+                        </div>
+                        
+                        <div class="divBotao">
+                            <input type="submit" class="botaoEntrar fs-4" value="Entrar">
+                            <a class="small TextRosa" href="password.html">Esqueceu sua Senha?</a>
+                        </div>
+                    
+                    </form>
+                
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small TextWhite">Novo por aqui? <a asp-action="Registro" class="TextRosa">Crie sua conta!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script type="text/javascript">
+    
+        let mensagemErro = "";
+        $('.validation-summary-errors ul li').each(function () {
+            mensagemErro += $(this).text() + '<br />';
+        });
+        if (mensagemErro != "") {
+            swal.fire({
+                title: "Acesso Negado",
+                html: mensagemErro,
+                icon: "error"
+            });
+        }
+    </script>
+}

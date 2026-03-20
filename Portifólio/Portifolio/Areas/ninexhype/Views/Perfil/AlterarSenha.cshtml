@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="~/ninexhype-css/perfil.css">
+
+@{
+    ViewData["Title"] = "Alterar Senha";
+}
+
+<div class="container">
+    <h2 class="letraBranca">Alterar Senha</h2>
+    <div class="main">
+        <form asp-action="AlterarSenha" class="formMerda center" method="post">
+            <div class="conteudo">
+                <div class="campos">
+                    <label class="letraBranca fs-3">Senha Atual</label>
+                    <input type="password" name="senhaAtual" class="inputCampo form-control" required />
+                </div>
+
+                <div class="campos">
+                    <label class="letraBranca fs-3">Nova Senha</label>
+                    <input type="password" name="novaSenha" class="inputCampo form-control" required />
+                </div>
+
+                <div class="divBotoesEditar">
+                    <button type="submit" class="btn btnSalvar">Salvar</button>
+                    <a asp-action="Index" class="btn btnCancelar">Cancelar</a>    
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger mt-2"></div>
+
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["Sucesso"]</div>
+    }
+</div>

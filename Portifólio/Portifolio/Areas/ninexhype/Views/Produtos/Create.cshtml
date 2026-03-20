@@ -1,0 +1,203 @@
+@model Portifolio.Areas.NinexHype.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/ninexhype-css/CreateProduto.css">
+
+<div class="container">
+    <div class="areaTitulo">
+        <h1 class="detalhesTitulo">Adicionar Produto</h1>
+    </div>
+
+    <div class="main">
+        <div class="quadradoEsq">
+            <form asp-action="Create" method="post" enctype="multipart/form-data" id="produtoForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="primeiraLinha">
+                    <label asp-for="Nome" class="tituloCampo fs-3"></label>
+                    <input asp-for="Nome" class="inputCampo" placeholder="Insira o Nome Produto" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="segundaLinha">
+                    <div class="campoDuplo">
+                        <label asp-for="Categoria" class="tituloCampo fs-3"></label>
+                        <select asp-for="CategoriaId" class="inputCampo" asp-items="ViewBag.CategoriaId"></select>
+                    </div>
+                    <div class="campoDuplo">
+                        <label asp-for="Genero" class="tituloCampo fs-3"></label>
+                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<Genero>()" class="inputCampo"></select>
+                    </div>
+                </div>
+
+                <div class="terceiraLinha">
+                    <div class="campoDuplo">
+                        <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorVenda" class="inputCampo" placeholder="Defina o Valor de Venda" />
+                        <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                    </div>
+                    <div class="campoDuplo">
+                        <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorCusto" class="inputCampo" placeholder="Informe o Valor de Custo" />
+                        <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="quintaLinha">
+                    <div class="form-group">
+                        <label asp-for="QtdeEstoque" class="tituloCampo fs-3"></label>
+                        <input asp-for="QtdeEstoque" class="inputCampo" placeholder="Informe a Quantidade em Estoque" />
+                        <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="quintaLinha">
+                    <label asp-for="Descricao" class="tituloCampo fs-3"></label>
+                    <textarea asp-for="Descricao" class="inputCampo" rows="5"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+
+                <!-- Input de arquivo HIDDEN dentro do formulário -->
+                <input type="file" name="Fotos" accept="image/*" multiple id="fileInputHidden" style="display: none;">
+
+                <div class="form-group">
+                    <input type="submit" value="Criar" class="btn btn-primary botaoCreate" />
+                </div>
+            </form>
+        </div>
+
+        <div class="quadradoDir">
+            <!-- Área de upload de imagens visual -->
+            <div class="form-group">
+                <label class="custom-file">
+                    <div class="botaoSelecionarImagem">
+                        <span class="letraBranca bold btn-upload">Selecionar Imagens</span>
+                    </div>
+                    <input type="file" class="displayNone previewImg" accept="image/*" multiple id="fileInputVisual">
+                </label>
+            </div>
+
+            <div class="preview-container" id="preview"></div>
+        </div>
+    </div>
+
+    <div class="botaoVoltar">
+        <a asp-action="Index" class="botaoVoltarLista">Voltar</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+    <script>
+        const fileInputVisual = document.getElementById('fileInputVisual');
+        const fileInputHidden = document.getElementById('fileInputHidden');
+        const previewContainer = document.getElementById('preview');
+        const form = document.getElementById('produtoForm');
+
+        // Array para armazenar os arquivos selecionados
+        let selectedFiles = [];
+
+        fileInputVisual.addEventListener('change', function () {
+            previewContainer.innerHTML = ''; // Limpa o preview anterior
+            
+            // Adiciona os novos arquivos ao array
+            const newFiles = Array.from(fileInputVisual.files);
+            selectedFiles = [...selectedFiles, ...newFiles];
+
+            // Atualiza o input hidden com todos os arquivos
+            updateHiddenFileInput();
+
+            // Atualiza o preview
+            updatePreview();
+        });
+
+        function updateHiddenFileInput() {
+            // Cria um novo DataTransfer para armazenar os arquivos
+            const dataTransfer = new DataTransfer();
+            
+            // Adiciona todos os arquivos selecionados
+            selectedFiles.forEach(file => {
+                dataTransfer.items.add(file);
+            });
+
+            // Atualiza o input hidden com os arquivos
+            fileInputHidden.files = dataTransfer.files;
+        }
+
+        function updatePreview() {
+            previewContainer.innerHTML = '';
+
+            if (selectedFiles.length > 0) {
+                selectedFiles.forEach((file, index) => {
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const imgWrapper = document.createElement('div');
+                            imgWrapper.style.position = 'relative';
+                            imgWrapper.style.width = '150px';
+                            imgWrapper.style.height = '150px';
+                            imgWrapper.style.margin = '5px';
+                            
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.style.width = '100%';
+                            img.style.height = '100%';
+                            img.style.objectFit = 'cover';
+                            img.style.borderRadius = '4px';
+                            img.style.border = '1px solid var(--Destaque-color)';
+                            
+                            // Botão para remover imagem
+                            const removeBtn = document.createElement('button');
+                            removeBtn.innerHTML = '×';
+                            removeBtn.style.position = 'absolute';
+                            removeBtn.style.top = '5px';
+                            removeBtn.style.right = '5px';
+                            removeBtn.style.background = 'var(--VermelhoFav-color)';
+                            removeBtn.style.color = 'white';
+                            removeBtn.style.border = 'none';
+                            removeBtn.style.borderRadius = '50%';
+                            removeBtn.style.width = '25px';
+                            removeBtn.style.height = '25px';
+                            removeBtn.style.cursor = 'pointer';
+                            removeBtn.style.fontWeight = 'bold';
+                            
+                            removeBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                // Remove o arquivo do array
+                                selectedFiles.splice(index, 1);
+                                // Atualiza o input hidden
+                                updateHiddenFileInput();
+                                // Atualiza o preview
+                                updatePreview();
+                            });
+                            
+                            imgWrapper.appendChild(img);
+                            imgWrapper.appendChild(removeBtn);
+                            previewContainer.appendChild(imgWrapper);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        }
+
+        // Validação do formulário
+        form.addEventListener('submit', function(e) {
+            const files = fileInputHidden.files;
+            if (files.length === 0) {
+                if (!confirm('Nenhuma imagem foi selecionada. Deseja continuar mesmo assim?')) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            return true;
+        });
+    </script>
+}

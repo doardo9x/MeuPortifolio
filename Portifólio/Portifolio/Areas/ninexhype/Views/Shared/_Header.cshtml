@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="~/ninexhype-css/Layout.css">
+</head>
+
+<Header>
+    <div class="HeaderLogo center desktop">
+        <a asp-controller="Home" asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
+    </div>
+
+    <form asp-controller="Produtos" asp-action="Pesquisar" method="get" class="HeaderSearchBar">
+        <div class="center">
+            <div class="contSearchBar">
+                <input class="searchBar" type="text" name="termo" placeholder="Digite o nome do produto.">
+                <button type="submit" style="all: unset; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 
+                            3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1z
+                            M12 6.5a5.5 5.5 0 1 1-11 0 
+                            5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="HeaderIcons center">
+        <a class="icons position-relative" asp-controller="Carrinho" asp-action="Index">
+            <i class="icones fa-solid fa-cart-shopping"></i>
+        </a>
+        <div class="icons">
+            <partial name="_LoginPartial" />
+        </div>
+    </div>
+
+</Header>
+
+<div class="HeaderMobile">
+    <a asp-controller="Home" asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
+</div>

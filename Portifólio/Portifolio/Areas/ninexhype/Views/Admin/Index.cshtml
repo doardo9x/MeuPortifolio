@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Área Administrativa";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/ninexhype-css/indexAdmin.css">
+
+<body>
+    <div class="ADMcontainer ">
+
+        <div class=" bodyAdmContainer">
+            <div class="center paddingtop100">
+                <h1 class="titleDashboard w100"> DASHBOARD</h1>
+            </div>            
+            <div class="center bordertitle ">
+                <div class="fs-5 ">O que voce deseja?</div>
+            </div>
+
+            <div class="DashboardC center">
+
+                    <a class="botao fs-2" asp-controller="Categorias" asp-action="Index">
+                       <img src="~/ninexhype-img/CRUD/CategoriasFundo.png">
+                    </a>
+
+                    <a class="botao fs-2" asp-controller="Produtos" asp-action="Index">    
+                        <img src="~/ninexhype-img/CRUD/ProdutosFundo.png">
+                    </a>
+
+            </div>
+        
+        </div>
+    </div>
+</body>

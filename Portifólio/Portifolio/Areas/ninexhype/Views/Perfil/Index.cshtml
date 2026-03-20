@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="~/ninexhype-css/perfil.css">
+
+@model Portifolio.Areas.NinexHype.Models.Usuario
+@{
+    ViewData["Title"] = "Meu Perfil";
+}
+
+<div class="container">
+    <h2 class="letraBranca">Meu Perfil</h2>
+    <hr />
+
+    <div class="main">
+        <div class="quadradoEsq">
+            <div class="fotoInput">
+                @if (!string.IsNullOrEmpty(Model.Foto))
+                {
+                    <!-- Mostra a imagem salva -->
+                    <img src="@Url.Content("~/ninexhype-img/usuarios/" + Model.Foto)" class="fotoUsuario" id="previewImage" />
+
+                }
+                else
+                {
+                    <!-- Imagem padrão -->
+                    <img src="~/ninexhype-img/PerfilUsuario/perfilVazio.png" class="fotoUsuario" id="previewImage" />
+                }
+
+            </div>
+        </div>
+
+        <div class="quadradoDir">
+            <div>
+                <p class="letraRosa fs-3">Nome</p>
+                <p class="letraBranca fs-4">@Model.Nome</p>
+            </div>
+
+            <div>
+                <p class="letraRosa fs-3">Email</p>
+                <p class="letraBranca fs-4">@Model.Email</p>
+            </div>
+
+            <div>
+                <p class="letraRosa fs-3">CPF</p>
+                <p class="letraBranca fs-4">@Model.Cpf</p>
+            </div>
+
+            <div>
+                <p class="letraRosa fs-3">Data de Nascimento</p>
+                <p class="letraBranca fs-4">@Model.DataNascimento.ToString("dd/MM/yyyy")</p>
+            </div>
+
+            <div>
+                <p class="letraRosa fs-3">Gênero</p>
+                <p class="letraBranca fs-4">@Model.Genero</p>
+            </div>
+
+            <div>
+                <p class="letraRosa fs-3">Telefone Alternativo</p>
+                <p class="letraBranca fs-4">@Model.TelefoneAlternativo</p>
+            </div>
+
+            @if (Model.Endereco != null)
+            {
+                <hr />
+                <h5>Endereço</h5>
+                <p><strong>Rua:</strong> @Model.Endereco.Logradouro</p>
+                <p><strong>Número:</strong> @Model.Endereco.Numero</p>
+                <p><strong>Complemento:</strong> @Model.Endereco.Complemento</p>
+                <p><strong>Bairro:</strong> @Model.Endereco.Bairro</p>
+                <p><strong>Cidade:</strong> @Model.Endereco.Cidade</p>
+                <p><strong>Estado:</strong> @Model.Endereco.Estado</p>
+                <p><strong>CEP:</strong> @Model.Endereco.Cep</p>
+            }
+
+            <div class="mt-3 divBotoes">
+                <a asp-action="Editar" class="btn btn-primary">Editar Perfil</a>
+                <a asp-action="AlterarSenha" class="btn btn-outline-secondary">Alterar Senha</a>
+            </div>
+        </div>
+    </div>
+
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["Sucesso"]</div>
+    }
+</div>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

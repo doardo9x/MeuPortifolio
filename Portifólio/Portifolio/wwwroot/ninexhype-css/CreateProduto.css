@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: auto;
+}
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.container {
+    background-color: var(--main-BG-color);
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.displayNone {
+    display: none;
+}
+
+.main {
+    width: 80%;
+    height: 80%;
+    border: 1px solid var(--Destaque-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.detalhesTitulo {
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 600;
+}
+
+.areaTitulo {
+    width: 80%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.quadradoEsq {
+    width: 50%;
+    height: 100%;
+    /* min-height: 742px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadradoDir {
+    width: 50%;
+    height: auto;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.primeiraLinha {
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+
+.tituloCampo {
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 600;
+}
+
+.inputCampo {
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 400;
+    padding: 5px;
+    margin-top: 10px;
+
+    resize: vertical;        /* permite redimensionar verticalmente */
+    max-height: 7.5em;       /* altura máxima aproximada p/ 5 linhas */
+    overflow-y: auto;        /* adiciona scrollbar vertical se passar */
+    line-height: 1.5em;      /* altura de cada linha */
+}
+
+.segundaLinha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+
+.campoDuplo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45%;
+}
+
+.terceiraLinha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+
+.quartaLinha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+
+.quintaLinha {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+
+.inputDesc {
+    height: 50%;
+}
+
+.fotoGrande {
+    width: 80%;
+    height: 200px;
+    background-color: var(--CinzaFraco-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--CinzaClaroHover);
+    font-family: Rajdhani;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.fotoGrande:hover,
+.fotoPequena:hover {
+    filter: brightness(0.8);   /* escurece um pouco */
+    cursor: pointer;
+    transition: 0.3s ease;     /* animação suave */
+    border: 1px solid var(--RoxoClaroHover-color);
+}
+
+.fotoPequena {
+    width: 48%;
+    background-color: var(--CinzaFraco-color);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--CinzaClaroHover);
+    font-family: Rajdhani;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.divFotoPequena {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.caixaSelecao {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    font-weight: 400;
+    padding: 5px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #9d4edd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checkbox::after {
+    content: "";
+    width: 5px;
+    height: 10px;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.2s ease;
+    position: absolute;
+}
+
+.checkbox:checked {
+    border-color: #a855f7;
+    /* borda roxa mais clara */
+}
+
+.checkbox:checked::after {
+    border-color: #a855f7;
+    /* cor do check */
+    opacity: 1;
+}
+
+.caixaSelecao:has(.checkbox:checked) {
+    border-color: var(--Destaque-color);
+    box-shadow: 0 0 5px #a855f7;
+}
+
+.divBotaoCriar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botaoCreate {
+    background-color: var(--Destaque-color);
+    border: var(--RoxoClaro-color);
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 20%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botaoCreate:hover {
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+    background-color: var(--Destaque-color);
+}
+
+.botaoVoltarLista {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.botaoVoltar {
+    width: 10%;
+    height: 10%;
+    background-color: var(--Destaque-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.botaoVoltar:hover {
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+}
+
+.botaoMobile {
+    display: none;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 30%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botaoCreateMobile:hover {
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+    background-color: var(--Destaque-color);
+}
+
+.botaoCreateMobile {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: var(--Destaque-color);
+    border: 0;
+}
+
+.uploadArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.letraBranca {
+    color: white;
+}
+
+/* ---------------------------------- CSS Input Foto ----------------------------------------- */
+
+.bold {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botaoSelecionarImagem {
+    width: 100%;
+    height: 100%;
+    background-color: var(--Destaque-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.botaoSelecionarImagem:hover {
+    background-color: var(--RoxoClaroHover-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.custom-file-label {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-name {
+    font-style: italic;
+    color: #333;
+}
+
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.preview-container img {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--Destaque-color);
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+    .main {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .quadradoEsq {
+        width: 100%;
+        align-items: start;
+    }
+
+    .quadradoDir {
+        width: 100%;
+        justify-content: start;
+        margin-top: 20px;
+    }
+
+    .oculto {
+        display: none;
+    }
+
+    .botaoMobile {
+        display: flex;
+    }
+
+    .botaoVoltar {
+        width: 40%;
+    }
+
+    .fotoGrande {
+        height: 150px;
+        width: 100%;
+    }
+
+    .divFotoPequena {
+        width: 100%;
+    }
+
+    .fotoPequena {
+        height: 100px;
+    }
+}
+
+
+/* Adicione ao final do seu arquivo CSS existente */
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
+    justify-content: center;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.preview-container div {
+    flex: 0 0 auto;
+}

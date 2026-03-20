@@ -1,0 +1,118 @@
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container-table {
+    padding: 50px;
+}
+
+.bg-table {
+    background-color: var(--main-BG-color);
+}
+
+.table {
+    width: 80%;
+    border: 1px solid var(--RoxoClaroHover-color);
+}
+
+.Titulo {
+    color: white;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--Destaque-color);
+}
+
+.text-tituloTable {
+    color: var(--RoxoClaroHover-color);
+    text-decoration: none;
+}
+
+.text-tituloTable:hover {
+    color: var(--RosaClarinho-color);
+    text-decoration: none;
+
+}
+
+table.table thead th {
+    background-color: var(--RoxoForte-color);
+    color: var(--Destaque-color);
+}
+
+table.table tbody tr td {
+    background-color: var(--RoxoForte-color);
+    color: #fff;
+}
+
+.nomeProduto {
+    font-size: x-large;
+}
+
+.botoesGerenciar {
+    color: white;
+    padding: 10px;
+}
+
+.botaoEdit {
+    height: auto;
+    width: auto;
+    background-color: var(--Amarelo);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoEdit:hover {
+    background-color: var(--AmareloHover);
+}
+
+.botaoDetails {
+    height: auto;
+    width: auto;
+    background-color: var(--CinzaClaro);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDetails:hover {
+    background-color: var(--CinzaClaroHover);
+}
+
+.botaoDelete {
+    height: auto;
+    width: auto;
+    background-color: var(--VermelhoFav-color);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDelete:hover {
+    background-color: var(--VermelhoFavHover-color);
+}
+
+.divBotoes {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}

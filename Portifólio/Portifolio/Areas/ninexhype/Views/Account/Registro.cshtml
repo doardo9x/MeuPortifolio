@@ -1,0 +1,120 @@
+<link rel="stylesheet" href="~/ninexhype-css/registro.css">
+
+@model Portifolio.Areas.NinexHype.ViewModels.RegistroVM
+
+@{
+    ViewData["Title"] = "Registro";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<div class="container">
+    <div class="containerLogo">
+        <h3 class="display-6 text-center ninexLogo">9xHype</h3>
+    </div>
+
+    <div class="main">
+
+        <div class="quadradoEsq">
+            <form asp-action="Registro" method="post" class="formMerda" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="campo">
+                    <label asp-for="Nome" class="fs-3"></label>
+                    <input asp-for="Nome" class="inputCampo" />
+                    <span asp-validation-for="Nome" class="text-danger text-sm"></span>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="Email" class="fs-3"></label>
+                    <input asp-for="Email" class="inputCampo" />
+                    <span asp-validation-for="Email" class="text-danger text-sm"></span>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="Senha" class="fs-3"></label>
+                    <input asp-for="Senha" class="inputCampo" />
+                    <span asp-validation-for="Senha" class="text-danger text-sm"></span>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="ConfirmacaoSenha" class="fs-3"></label>
+                    <input asp-for="ConfirmacaoSenha" class="inputCampo" />
+                    <span asp-validation-for="ConfirmacaoSenha" class="text-danger text-sm"></span>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="DataNascimento" class="fs-3"></label>
+                    <input asp-for="DataNascimento" class="inputCampo" />
+                    <span asp-validation-for="DataNascimento" class="text-danger text-sm"></span>
+                </div>
+
+                <div class="divCriarConta">
+                    <input type="submit" class="btn letraBranca botaoCriar" value="Criar Conta" />
+                    <div class="small">Já possui um conta? <a asp-action="Login" class="letraRosa textDecNone">Faz login!</a></div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="quadradoDir">
+            <div class="containerImg">
+                <img id="PreviewImage" src="~/ninexhype-img/PerfilUsuario/perfilVazio.png" class="fotoUsuario"
+                    style="width: 200px; height: 200px;" />
+
+                <div class="divBotao">
+                    <label class="btn botaoFoto">
+                        <i class="letraBranca"></i> Foto do Avatar
+                        <input type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.gif,.jfif" hidden />
+                    </label>
+                    <span asp-validation-for="Foto" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script type="text/javascript">
+        let mensagemErro = '';
+        if ($('.validation-summary-errors ul li').length > 0) {
+            mensagemErro = $('.validation-summary-errors ul li').text() + "<br />";
+        }
+
+        if (mensagemErro != '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Acesso Negado',
+                html: mensagemErro
+            });
+        }
+
+        function changeImage() {
+            document.querySelector('input[type="file"]').click();
+        }
+
+        window.addEventListener('load', function () {
+            document.querySelector('input[type="file"]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.getElementById("PreviewImage");
+                    img.src = URL.createObjectURL(this.files[0]);
+                }
+            });
+        });
+    </script>
+}

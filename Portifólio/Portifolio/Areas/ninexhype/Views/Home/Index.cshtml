@@ -1,0 +1,230 @@
+﻿@model Portifolio.Areas.NinexHype.ViewModels.IndexVM
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!------------------- HEADER ------------------->
+<div class="bg-carousel" id="bgCarousel">
+    <div class="shadow-header">
+        <header>
+            <div class="HeaderLogo center desktop">
+                <a asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
+            </div>
+            <div class="HeaderLogo center mobile">
+                <a href="index.html" class="fs-1 ninexLogo center">9xHype</a>
+            </div>
+
+            <form asp-controller="Produtos" asp-action="Pesquisar" method="get" class="HeaderSearchBar">
+                <div class="center">
+                    <div class="contSearchBar">
+                        <input class="searchBar" type="text" name="termo" placeholder="Digite o nome do produto.">
+                        <button type="submit" style="all: unset; cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 
+                            3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1z
+                            M12 6.5a5.5 5.5 0 1 1-11 0 
+                            5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="HeaderIcons center">
+                <a class="icons position-relative" asp-controller="Carrinho" asp-action="Index">
+                    <i class="icones fa-solid fa-cart-shopping"></i>
+                </a>
+                <div class="icons">
+                    <partial name="_LoginPartial">
+                </div>
+            </div>
+
+            <!-- mobile -->
+            <div class="contMobile-Icons">
+                <div class="HeaderIcons-mobile center">
+                    <a class="icons position-relative" asp-controller="Carrinho" asp-action="Index">
+                        <i class="icones fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <div class="icons">
+                        <partial name="_LoginPartial">
+                    </div>
+                </div>
+
+                <!-- Botão do menu -->
+                <button class="btn btn-secondary" type="button" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Sidebar -->
+                <div id="sidebar" class="sidebar">
+                    <button class="close-btn" id="closeSidebar">&times;</button>
+                    <a asp-action="PagHomem" class="btn btn-secondary dropdown botoes" type="button">
+                        MASCULINO
+                    </a>
+                    <a asp-action="PagMulher" class="btn btn-secondary dropdown botoes" type="button">
+                        FEMININO
+                    </a>
+                    <a asp-action="Unissex" class="btn btn-secondary dropdown botoes" type="button">
+                        UNISSEX
+                    </a>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Tenis">Tênis</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Camisas">Camisas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Blusas">Blusas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Jaquetas">Jaquetas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Shorts">Shorts</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Calcas">Calças</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Acessorios">Acessórios</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav-computer center">
+            <a class="dropdown">
+                <a asp-action="PagHomem" class="btn btn-secondary dropdown botoes" type="button">
+                    MASCULINO
+                </a>
+            </a>
+            <div class="dropdown">
+                <a asp-action="PagMulher" class="btn btn-secondary dropdown botoes" type="button">
+                    FEMININO
+                </a>
+            </div>
+            <div class="dropdown">
+                <a asp-action="Unissex" class="btn btn-secondary dropdown botoes" type="button">
+                    UNISSEX
+                </a>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownFiltros"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    FILTROS ⭣
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownFiltros">
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Tenis">Tênis</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Camisas">Camisas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Blusas">Blusas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Jaquetas">Jaquetas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Shorts">Shorts</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Calcas">Calças</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Acessorios">Acessórios</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+    </div>
+
+    <div class="container-BG center"></div>
+</div>
+
+<!--------------------- SITE --------------------->
+<div class="w100 center">
+    <div class="container-body">
+        <div class="Produtos">
+            <div class="cont-Sneakers">
+                <div class="Sneakers fs-1">DESTAQUES</div>
+                <div class="slideshow-container">
+                    @foreach (Produto produto in Model.Destaques)
+                    {
+
+                        <div class="slideshow fade ativo">
+                            <a class="w100 h100 d-block">
+                                <div class="numeracao">@produto.Id</div>
+                                <img src="@(produto.Fotos.Count <= 0 ? 
+                                                                                                                                                                                                                                          "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
+                                                                                                                                                                                                                                          produto.Fotos[0].ArquivoFoto)"
+                                    alt="@produto.Nome" />
+                                <div class="legenda">
+                                    <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
+                                    <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    }
+                </div>
+                <div class="paginacao">
+                    @for (int i = 0; i < Model.Destaques.Count; i++)
+                    {
+                        <span class="dot" onclick="currentSlide(@i)"></span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section-->
+<section class="contRoupa">
+    <div class="carrosselRoupas">
+        <div class="Linha">
+            <p class="LinhaTitulo fs-1 center">Sneakers</p>
+        </div>
+
+        @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 2))
+        {
+
+            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos).Take(7);
+
+            @foreach (var produto in produtosTipo)
+            {
+                <div class="card cardCarrossel" style="width: 12rem;">
+                    <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <img src="@(produto.Fotos.Count <= 0 
+                                                                                                                                                                                                              ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
+                                                                                                                                                                                                              : produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
+                    </div>
+                </div>
+            }
+        }
+        <div class="LinhaEsq">
+            <p class="LinhaTitulo fs-1 center">Roupas</p>
+        </div>
+        @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 1))
+        {
+
+            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos).Take(7);
+
+            @foreach (var produto in produtosTipo)
+            {
+                <div class="card cardCarrossel" style="width: 12rem;">
+                    <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <img src="@(produto.Fotos.Count <= 0 
+                                                                                                                                                                                                              ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
+                                                                                                                                                                                                              : produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>

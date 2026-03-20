@@ -1,0 +1,101 @@
+@model Portifolio.Areas.NinexHype.Models.Carrinho
+@{
+    ViewData["Title"] = "Carrinho";
+}
+<link rel="stylesheet" href="~/ninexhype-css/PagCarrinho.css">
+
+<div class="container">
+
+    <div class="campoTitulo">
+        <h2 class="letraBranca fs-1">@ViewData["Title"]</h2>
+    </div>
+
+    @if (Model.Itens.Count == 0)
+    {
+        <p class="letraBranca fs-5">Seu carrinho está vazio 😢</p>
+        <div class="carrinhoVazio"></div>
+    }
+    else
+    {
+        <div class="main">
+
+            <div class="cabecalho">
+                <h1 class="tituloProdutos">Produto (@Model.Itens.Count)</h1>
+                <h4 class="totalCarrinho">
+                    Total: <strong>R$ @ViewBag.Total.ToString("N2")</strong>
+                </h4>
+            </div>
+
+            @foreach (var item in Model.Itens)
+            {
+                // Busca a primeira foto do produto (igual na página de produtos)
+                var fotoProduto = item.Produto.Fotos?.FirstOrDefault()?.ArquivoFoto;
+
+                <div class="section">
+                    <div class="produtoCarrinho">
+                        <div class="fotoProduto">
+                            @if (!string.IsNullOrEmpty(fotoProduto))
+                            {
+                                // Exibe a foto que já está relacionada ao produto no banco
+                                <a asp-controller="Home" asp-action="Produto" asp-route-id="@item.Produto.Id">
+                                    <img src="@fotoProduto" alt="@item.Produto.Nome"
+                                        style="width: 100%; height: 100%; border-radius: 15px; object-fit: cover;" />
+                                </a>
+                            }
+                            else
+                            {
+                            // Imagem padrão caso o produto não tenha foto
+                                <img src="/ninexhype-img/sem-foto.png" alt="Sem imagem" class="imgProdutoCarrinho" />
+                            }
+                        </div>
+
+                        <div class="infoProduto">
+                            <div class="textoInfoProduto letraBranca fs-1">@item.Produto.Nome</div>
+
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div class="textoRosa">Preço:</div>
+                                R$ @item.Produto.ValorVenda.ToString("N2")
+                            </div>
+
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div class="textoRosa">Marca:</div>
+                                @item.Produto.Marca
+                            </div>
+
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div class="textoRosa">Cor:</div>
+                                @item.Produto.Cor
+                            </div>
+
+                            <div class="opcoesProduto letraBranca fs-4">
+                                <div class="quantidadeProduto">
+                                    <form asp-action="AtualizarQuantidade" method="post">
+                                        <h1 class="textoRosa fs-4">Quantidade:</h1>
+                                        <input type="hidden" name="itemId" value="@item.Id" />
+                                        <input type="number" class="labelQuantidade" name="novaQuantidade"
+                                            value="@item.Quantidade" min="1" />
+                                        <button type="submit" class="btnAtualizar">Atualizar</button>
+                                    </form>
+                                </div>
+
+                                <div class="divBotaoExcluir">
+                                    <form asp-action="Remover" method="post">
+                                        <input type="hidden" name="itemId" value="@item.Id" />
+                                        <button type="submit" class="btnRemover">
+                                            <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <form asp-action="Limpar" method="post">
+            <button type="submit" class="limparCarrinho">Limpar Carrinho</button>
+        </form>
+    }
+</div>

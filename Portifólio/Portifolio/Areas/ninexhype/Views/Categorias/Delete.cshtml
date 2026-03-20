@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="~/ninexhype-css/deleteCategoria.css">
+@model Portifolio.Areas.NinexHype.Models.Categoria
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="cont-body">
+    <h1 class="letraBranca">Delete</h1>
+    <h3 class="letraBranca">Tem certeza que deseja deletar esta categoria?</h3>
+
+    <div class="main">
+        <div class="conteudo">
+            <div class="nome">
+                <dt class="fs-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </div>
+
+            <div class="divBotoes">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Deletar" class="btn botaoDeletar" />
+                    <a asp-action="Index" class="btn botaoVoltar">Voltar</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div>
+</div>

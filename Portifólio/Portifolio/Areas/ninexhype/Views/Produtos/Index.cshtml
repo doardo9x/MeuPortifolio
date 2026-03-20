@@ -1,0 +1,65 @@
+@model IEnumerable<Portifolio.Areas.NinexHype.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";   
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="tituloGerenciar">Gerenciar Produtos</h1>
+
+ <a asp-action="Create" class="textoBotao btnAddProduto">Adicionar Produto
+    <i class="fa-solid fa-plus"> </i>
+ </a> 
+
+<div class="tabela">
+    <table class="table" id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th class="tdDesc">Descrição</th>
+                <th>Estoque</th>
+                <th>Custo</th>
+                <th>Venda</th>
+                <th>Gênero</th>
+                <th>Gerenciar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@item.Id" class="itemTabela">
+                    <td>@Html.DisplayFor(modelItem => item.Categoria.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td class="tdDesc">@Html.DisplayFor(modelItem => item.Descricao)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QtdeEstoque)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ValorCusto)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ValorVenda)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Genero)</td>
+                     <td>
+                        <div class="divBotoes">
+                            <div class="botaoEdit">
+                                <a asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-pen-to-square botoesGerenciar"></i>
+                                </a> 
+                            </div>
+
+                            <div class="botaoDetails">
+                                <a asp-action="Details" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-circle-info botoesGerenciar"></i>
+                                </a> 
+                            </div>
+
+                            <div class="botaoDelete">
+                                <a asp-action="Delete" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-trash-can botoesGerenciar"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<link rel="stylesheet" href="~/ninexhype-css/tabelaProdutos.css">

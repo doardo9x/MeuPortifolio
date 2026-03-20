@@ -12,3 +12,25 @@ yarn-error.log*
 
 # Cache
 .cache/
+
+# Build
+bin/
+obj/
+
+# Configurações locais (contém segredos)
+appsettings.Development.json
+*.user
+
+# Visual Studio
+.vs/
+*.suo
+*.rsuser
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# Imagens locais (adicione as suas ao projeto manualmente)
+wwwroot/img/

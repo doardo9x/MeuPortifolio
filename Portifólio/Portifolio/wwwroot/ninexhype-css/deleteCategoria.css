@@ -1,0 +1,129 @@
+html {
+    width: 100%;
+    height: auto;
+}
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.cont-body {
+    background-color: var(--main-BG-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.main {
+    width: 50%;
+    height: 100%;
+    border: 1px solid var(--Destaque-color);
+    display: flex;
+    justify-content: center !important; 
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.letraBranca {
+    color: white;
+}
+
+.inputCampo {
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 400;
+    padding: 5px;
+}
+.tituloCampo {
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 600;
+}
+
+.botaoVoltar {
+    background-color: var(--RoxoClaro-color);
+    color: white;
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.botaoVoltar:hover {
+    background-color: var(--RoxoClaroHover-color);
+}
+
+.botaoDeletar {
+    color: white;
+    background-color: var(--VermelhoFav-color);
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.botaoDeletar:hover {
+    background-color: var(--VermelhoFavHover-color);
+}
+
+.divBotoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  
+    padding-top: 10px;
+}
+
+.botoesGerenciar{
+    color: white;
+    padding: 10px;
+}
+
+.campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.conteudo {
+    width: 50%;
+}
+
+.nome {
+    padding: 5px;
+}
+
+.foto {
+    padding: 5px;
+}
+
+.labelDetalhe {
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    padding: 5px;
+}

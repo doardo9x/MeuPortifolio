@@ -1,0 +1,57 @@
+@model IEnumerable<Portifolio.Areas.NinexHype.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h1 class="tituloGerenciar fs-1">Categorias</h1>
+
+<div class="container-table center">
+    <table class="table ">
+        <thead class="Title-table">
+            <tr>
+                <th class="fs-4 bg-table">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th class="fs-4 ">
+                    <a asp-action="Create" class="text-tituloTable"> <i class="fa-solid fa-plus"></i></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="nomeProduto">
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td class="divBotoes divBotao">
+
+                        <div class="botaoEdit">
+                            <a asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-pen-to-square botoesGerenciar"></i>
+                            </a>
+                        </div>
+
+                        <div class="botaoDetails">
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-circle-info botoesGerenciar"></i>
+                            </a>
+                        </div>
+
+                        <div class="botaoDelete">
+                            <a asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-trash-can botoesGerenciar"></i>
+                            </a>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<link rel="stylesheet" href="~/ninexhype-css/tabelaProdutos.css">

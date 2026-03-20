@@ -1,0 +1,53 @@
+using Portifolio.Areas.NinexHype.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace Portifolio.Areas.NinexHype.Data
+{
+    public class AppDbContext : IdentityDbContext<Usuario>
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<ProdutoFoto> ProdutoFoto { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<TipoRoupa> TiposRoupa { get; set; }
+
+        // 🔹 Carrinho e itens do carrinho
+        public DbSet<Carrinho> Carrinhos { get; set; }
+        public DbSet<CarrinhoItem> CarrinhoItens { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            AppDbSeed seed = new(builder);
+
+            #region Renomear tabelas do Identity
+            builder.Entity<IdentityUser>().ToTable("usuario");
+            builder.Entity<IdentityUserRole<string>>().ToTable("usuario_perfil");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("usuario_login");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("usuario_regra");
+            builder.Entity<IdentityUserToken<string>>().ToTable("usuario_token");
+            builder.Entity<IdentityRole>().ToTable("perfil");
+            builder.Entity<IdentityRoleClaim<string>>().ToTable("perfil_regra");
+            #endregion
+
+            #region Relacionamentos do Carrinho
+            builder.Entity<Carrinho>()
+                .HasOne(c => c.Usuario)
+                .WithOne(u => u.Carrinho)
+                .HasForeignKey<Carrinho>(c => c.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<CarrinhoItem>()
+                .HasOne(ci => ci.Carrinho)
+                .WithMany(c => c.Itens)
+                .HasForeignKey(ci => ci.CarrinhoId)
+                .OnDelete(DeleteBehavior.Cascade);
+            #endregion
+        }
+    }
+}

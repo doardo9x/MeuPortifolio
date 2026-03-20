@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Inteligência Artificial";
+}
+
+<section class="inner-page ia-page">
+    <h1 class="page-title">Inteligência Artificial</h1>
+    <p class="page-sub">Converse com a IA integrada via Groq.</p>
+
+    <div id="chat-box" aria-live="polite"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Digite sua pergunta..." autocomplete="off" />
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+}

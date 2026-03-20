@@ -1,0 +1,380 @@
+<link rel="stylesheet" href="~/ninexhype-css/carrossel.css">
+<link rel="stylesheet" href="~/ninexhype-css/produto.css">
+
+@model Portifolio.Areas.NinexHype.ViewModels.ProdutoVM
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<!-- Pág Produto -->
+<div class="pagProduto">
+
+    <!-- Carrossel -->
+    <div class="section-padding ">
+        <div class="screenshot_slider owl-carousel">
+            @foreach (var foto in Model.Produto.Fotos)
+            {
+                <div class="item"><img src="@foto.ArquivoFoto" alt="Foto @foto.ProdutoId"></div>
+            }
+        </div>
+    </div>
+    <!--Fim Carrossel-->
+
+    <!-- Info Produto -->
+    <div class="infoProduto">
+
+        <div class="descricao">
+            <div class="tituloDescricao">
+                Descrição
+            </div>
+
+            <div class="txtDescricao">
+                @Model.Produto.Descricao
+            </div>
+        </div>
+
+        <div class="infoPrincipal">
+            <div class="nomeProdutoPrincipal">@Model.Produto.Nome</div>
+            <div class="tamanhoSelecionado desktop">
+                <p>R$ @Model.Produto.ValorVenda</p>
+            </div>
+
+            <div class="botoes">
+                <button class="btn btn-primary btnComp" type="button">
+                    <i class="bi-cart-fill me-1"></i>
+                    Comprar
+                </button>
+
+                <form asp-controller="Carrinho" asp-action="Adicionar" method="post" class="btnCarrinho">
+                    <input type="hidden" name="produtoId" value="@Model.Produto.Id" />
+                    <button type="submit" class="btnCar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="infoEntrega">
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Estoque Disponível</div>
+                <div class="txtOpcoes3">Mais de @Model.Produto.QtdeEstoque unidades disponíveis</div>
+
+                <div class="txtOpcoes2">Quantidade Selecionada:
+                    <span id="quantidadeSelecionada">1</span>
+                </div>
+
+                <div class="btnEstoqueDisponivel">
+                    <button class="btnAdd">Adicionar</button>
+                    <button class="btnRem">Remover</button>
+                </div>
+            </div>
+
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Calcular Frete</div>
+                <nav class="SearchBarFrete">
+                    <input type="text" id="cepInput" class="calcularFrete" placeholder="Digite Seu CEP" />
+                </nav>
+                <div id="infoCep" class="txtOpcoes2">Informe o seu CEP no campo acima</div>
+
+                <!-- Resultado do prazo -->
+                <div class="txtOpcoes2" id="prazoResultado"></div>
+            </div>
+
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Prazo de Envio</div>
+                <div class="txtOpcoes2">Envio de 24 à 48 Horas.</div>
+                <div class="txtOpcoes3">Informe seu CEP para uma informação mais precisa
+                </div>
+            </div>
+            <div class="OpcoesInfoEntrega fornecedor">
+                <div class="txtOpcoes">Fornecedor</div>
+                <div class="txtOpcoes2">Eduardo Ribeiro Morais</div>
+                <div class="txtOpcoes2">(14) 99110-6247</div>
+                <div class="txtOpcoes2">Igaraçu do Tietê - SP</div>
+            </div>
+        </div>
+
+
+    </div> <!--Fim Info Produto-->
+
+    <div class="ContDescricaoSimples">
+        <div class="descricaoSimples">
+            <div class="headerDescSimples">
+                <h1 class="titleDesc">Descrição</h1>
+            </div>
+            <div class="itemDescSimples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <div class="txtDesc1">Marca:</div>
+                <div class="txtDesc2">@Model.Produto.Marca</div>
+            </div>
+            <div class="itemDescSimples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <div class="txtDesc1">Cor:</div>
+                <div class="txtDesc2">@Model.Produto.Cor</div>
+            </div>
+            <div class="itemDescSimples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <div class="txtDesc1">Material:</div>
+                <div class="txtDesc2">@Model.Produto.Material</div>
+            </div>
+            <div class="itemDescSimples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <div class="txtDesc1">Gênero:</div>
+                <div class="txtDesc2">@Model.Produto.Genero</div>
+            </div>
+            <div class="itemDescSimples">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <div class="txtDesc1">Atividade Recomendada:</div>
+                <div class="txtDesc2">@Model.Produto.AtividadeRecomendada</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Relacionados -->
+    <section class="relacionados">
+        <h2 class="titlePadrao">Produtos Semelhantes</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (Produto produto in Model.Semelhantes)
+            {
+                <div class="card cardCarrossel">
+                    <a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id">
+                        <img class="card-img-top"
+                            src="@(produto.Fotos.Count == 0 ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" : produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" />
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">@produto.ValorVenda</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- Comentários -->
+    <div class="comentarios">
+
+        <div class="headerComentarios">
+            <h1 class="titlePadrao">Comentários</h1>
+            <button id="botaoAddComentario">Adicionar</button>
+        </div>
+
+        <div class="listaCometarios" id="comentariosContainer">
+
+            <!-- Comentário novo -->
+            <form class="comentario comentarioNovoEstilo oculto" id="comentarioNovo" method="post"
+                action="/Comentarios/Salvar" enctype="multipart/form-data">
+
+                <div class="linhaUmComentarioNovo">
+                    <div class="infoEscritas">
+                        <div class="perfil">
+                            <img src="~/ninexhype-img/PerfilUsuario/perfilVazio.png" class="imgPerfil">
+                            <p class="nomePerfil">@User.Identity.Name</p>
+                        </div>
+
+                        <!-- Avaliação -->
+                        <div class="avaliacao" id="avaliacaoNova">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <input type="hidden" name="Nota" id="notaSelecionada" value="0" />
+
+                        <!-- Comentário -->
+                        <div class="txtComentario">
+                            <textarea class="paragrafoComentario" id="comentarioAutoAltura" name="Comentario"
+                                placeholder="Escreva Seu Comentário" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Upload da imagem -->
+                    <div class="imgComentario ">
+                        <label for="fotoComentario" style="cursor: pointer;">
+                            <img src="~/ninexhype-img/Comentarios/Reviews/ImagemVazia.png" class="previewImagemNovoComentario"
+                                id="previewImagem">
+                        </label>
+                        <input type="file" id="fotoComentario" name="Foto" accept="image/*" style="display: none;"
+                            onchange="previewImagem(this)">
+                    </div>
+                </div>
+
+                <div class="linhaDoisComentarioNovo">
+                    <button type="submit" class="btnEnviarComentario">
+                        <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                        Enviar Comentário
+                    </button>
+                    <button type="button" class="btnDeletarComentario">
+                        <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                        Deletar Comentário
+                    </button>
+                </div>
+            </form>
+            <!-- Fim Comentário novo -->
+
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="~/ninexhype-img/Comentarios/Perfis/exemploImgPerfil.jpg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">Carlos Eduardo</p>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            As roupas que escolhemos todos os dias funcionam como a nossa forma mais acessível de
+                            comunicação não verbal, traduzindo aspectos da nossa personalidade, humor e até mesmo nossas
+                            aspirações. Longe de serem apenas itens funcionais, elas são ferramentas poderosas de
+                            autoexpressão e construção de identidade. É fascinante como a combinação de cores, texturas
+                            e silhuetas pode contar uma história inteira sobre o indivíduo, revelando gostos e
+                            afiliações culturais, sem que uma única palavra seja dita. Em um mundo onde a primeira
+                            impressão é crucial, a roupa é o nosso figurino mais importante, agindo como um código
+                            social que nos posiciona e nos permite participar de diferentes contextos, tornando a moda
+                            um campo dinâmico que equilibra tendências passageiras com o estilo pessoal atemporal.
+                        </p>
+                    </div>
+                </div>
+                <div class="imgComentario">
+                    <img src="@Model.Produto.Fotos.FirstOrDefault()?.ArquivoFoto" alt="" class="imgReviewComentario" />
+                </div>
+            </div>
+
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="~/ninexhype-img/Comentarios/Perfis/exemploImgPerfil2.jpg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">José Antônio Gallo Junior</p>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            A prioridade dada ao conforto reflete uma mudança cultural significativa, onde a
+                            funcionalidade e o bem-estar superam a rigidez da estética formal. Hoje, a busca por
+                            materiais que ofereçam boa respirabilidade, caimento suave e elasticidade adequada é uma
+                            necessidade, não um luxo. Roupas que nos permitem movimentar-nos livremente, que não
+                            restringem nem causam desconforto, contribuem diretamente para a nossa disposição física e
+                            mental ao longo do dia. Graças aos avanços na tecnologia têxtil, tecidos inteligentes e
+                            designs mais ergonômicos transformaram peças básicas em aliadas essenciais que regulam a
+                            temperatura e absorvem a umidade. Vestir-se bem, neste contexto, significa vestir-se de
+                            forma que apoie um estilo de vida ativo e prático, provando que o verdadeiro luxo reside em
+                            sentir-se bem na própria pele, e na roupa que a cobre.
+                        </p>
+                    </div>
+                </div>
+                <div class="imgComentario">
+                    <img src="@(Model.Produto.Fotos.OrderBy(f => f.Id).Skip(2).FirstOrDefault()?.ArquivoFoto)" alt=""
+                        class="imgReviewComentario" />
+
+                </div>
+            </div>
+
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="~/ninexhype-img/Comentarios/Perfis/exemploImgPerfil3.jpeg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">Marcio Jesus de Morais</p>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            É inegável o impacto visual e social que a vestimenta exerce em qualquer interação. As
+                            roupas atuam como um código de status e respeito pela ocasião, estabelecendo o dress code de
+                            um ambiente e influenciando como somos percebidos pelos outros. Um traje bem pensado e
+                            adequado pode abrir portas, facilitar a comunicação e transmitir uma mensagem de seriedade e
+                            profissionalismo, enquanto um inadequado pode criar barreiras implícitas. Esse poder da
+                            vestimenta sobre a percepção alheia torna a escolha do que vestir um ato estratégico,
+                            especialmente em contextos formais ou de alta relevância. A atenção aos detalhes, como o
+                            ajuste perfeito da peça e seu estado de conservação, amplifica essa mensagem visual,
+                            reforçando que, em sociedade, a roupa é uma ferramenta social que merece consideração
+                            cuidadosa.
+                        </p>
+                    </div>
+                </div>
+                <div class="imgComentario">
+                    <img src="@(Model.Produto.Fotos.OrderBy(f => f.Id).Skip(1).FirstOrDefault()?.ArquivoFoto)" alt=""
+                        class="imgReviewComentario" />
+                </div>
+            </div>
+
+        </div><!--Lista Comentários-->
+
+    </div> <!--Fim Comentários-->
+
+</div> <!--Fim Pag Produto-->
+
+@* Script Carrossel *@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="~/ninexhype-js/scriptCarrossel.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/f950f409a7.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/f950f409a7.js" crossorigin="anonymous"></script>
+
+
+<script src="~/ninexhype-js/PagProduto/CarrosselScript.js"></script>
+
+<script src="~/ninexhype-js/PagProduto/scriptComentario.js"></script>

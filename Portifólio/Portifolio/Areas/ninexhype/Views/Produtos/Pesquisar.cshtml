@@ -1,0 +1,37 @@
+@model List<Portifolio.Areas.NinexHype.Models.Produto>
+
+<link rel="stylesheet" href="~/ninexhype-css/home.css">
+
+<div class="tituloResultado tituloPesquisa">
+    <h2 class="normalText fs-1 ">Resultados da Pesquisa</h2>
+</div>
+
+
+@if (Model.Count == 0)
+{
+    <p>Nenhum produto encontrado.</p>
+}
+else
+{
+    <section class="contRoupa">
+        <div class="carrosselRoupas">
+            @foreach (var produto in Model)
+            {
+                    <div class="card cardCarrossel" style="width: 12rem;">
+                        <a asp-action="Produto" asp-controller="Home" asp-route-id="@produto.Id">
+                            <img class="card-img-top"
+                                src="@(produto.Fotos.Count == 0 
+                                    ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                    : produto.Fotos[0].ArquivoFoto)" 
+                                alt="@produto.Nome" />
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title nomeProdutoCarrossel">@produto.Nome</h5>
+                            <p class="precoProduto card-text">R$ @produto.ValorVenda.ToString("N2")</p>
+                        </div>
+                    </div>
+            }
+        </div>
+    </section>
+}

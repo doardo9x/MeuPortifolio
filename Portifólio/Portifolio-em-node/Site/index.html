@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desenvolvedor Web</title>
+</head>
+
+<body>
+
+    <!-- Botão para abrir -->
+    <button class="open-btn" onclick="openMenu()">☰ Menu</button>
+
+    <!-- Menu lateral -->
+    <nav id="sidebar">
+        <button class="close-btn" onclick="closeMenu()">×</button>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('ia')">Inteligência Artificial</a></li>
+            <li><a onclick="showPage('projetos')">Projetos !!</a></li>
+            <li><a onclick="showPage('contato')">Contato !!</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main id="content">
+        <section id="home" class="page active">
+            <h1>Home</h1>
+            <p>Bem-vindo ao meu site!</p>
+        </section>
+
+        <section id="projetos" class="page">
+            <h1>Projetos</h1>
+            <p>Lista de projetos.</p>
+        </section>
+
+        <section id="ia" class="page">
+            <h1>Inteligência Artificial</h1>
+
+            <div id="chat-box"></div>
+
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Digite sua pergunta...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </section>
+
+        <section id="contato" class="page">
+            <h1>Contato</h1>
+            <p>Formas de contato.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

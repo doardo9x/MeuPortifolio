@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Início";
+}
+
+<section class="hero">
+    <div class="hero-foto">
+        <img src="~/img/foto.png" alt="Eduardo Ribeiro" class="foto-perfil" />
+    </div>
+    <div id="textBox" class="hero-info">
+        <div class="hero-nome fs-1">EDUARDO RIBEIRO</div>
+        <div class="hero-sub fs-7">
+            Desenvolvedor Web — Técnico pela Etec João Rays &amp; cursando Ciências da Computação
+        </div>
+        <div class="hero-stack fs-7">Back-end • C# .NET 10 •</div>
+        <a asp-controller="Home" asp-action="Projetos" class="hero-link">
+            <span class="link-label">Ver Projetos</span>
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/typing.js" asp-append-version="true"></script>
+}

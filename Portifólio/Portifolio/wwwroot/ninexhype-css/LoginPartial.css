@@ -1,0 +1,14 @@
+.dropdown-menu{
+    background-color: #101524;
+    color: white;
+}
+
+.dropdown-item{
+    color: white;
+text-align: center;
+}
+
+.dropdown-item:hover{
+    background-color: #622efe;
+    color: white;
+}

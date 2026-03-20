@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="~/ninexhype-css/detailsCategoria.css">
+@model Portifolio.Areas.NinexHype.Models.Categoria
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="cont-body">
+    <h1 class="letraBranca">Detalhes Categoria</h1>
+    <div class="main">
+
+        <div class="conteudo">
+            <div class="nome">
+                <dt class="fs-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </div>
+            <div class="nome">
+                <dt class="fs-3">
+                    Tipo do Produto
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model =>  model.TipoRoupa.Nome)
+                </dd>
+            </div>
+
+            <div class="divBotoes">
+                <a asp-action="Edit" class="btn botaoEdit" asp-route-id="@Model?.Id">Editar</a>
+                <a asp-action="Index" class="btn botaoVoltar">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

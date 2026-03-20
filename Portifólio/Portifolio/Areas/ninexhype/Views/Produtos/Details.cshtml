@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="~/ninexhype-css/DetailsProduto.css">
+
+@model Portifolio.Areas.NinexHype.Models.Produto
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/NinexHype/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="areaTitulo">
+        <h1 class="detalhesTitulo">Detalhes do Produto</h1>
+    </div>
+
+    <div class="main">
+        <div class="quadradoEsq">
+
+            <div class="primeiraLinha">
+                <dt class="col-sm-2 tituloCampo fs-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-10 inputCampo">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </div>
+
+            <div class="segundaLinha">
+                <div class="form-group campoDuplo">
+                    <dt class="col-sm-2 tituloCampo fs-3">
+                        @Html.DisplayNameFor(model => model.Categoria)
+                    </dt>
+                    <dd class="col-sm-10 inputCampo">
+                        @Html.DisplayFor(model => model.Categoria.Nome)
+                    </dd>
+                </div>
+
+                <div class="form-group campoDuplo">
+                    <dt class="col-sm-2 tituloCampo fs-3">
+                        @Html.DisplayNameFor(model => model.Genero)
+                    </dt>
+                    <dd class="col-sm-10 inputCampo">
+                        @Html.DisplayFor(model => model.Genero)
+                    </dd>
+                </div>
+            </div>
+
+            <div class="terceiraLinha">
+                <div class="form-group campoDuplo">
+                    <dt class="col-sm-2 tituloCampo fs-3">
+                        @Html.DisplayNameFor(model => model.ValorCusto)
+                    </dt>
+                    <dd class="col-sm-10 inputCampo">
+                        @Html.DisplayFor(model => model.ValorCusto)
+                    </dd>
+                </div>
+
+                <div class="form-group campoDuplo">
+                    <dt class="col-sm-2 tituloCampo fs-3">
+                        @Html.DisplayNameFor(model => model.ValorVenda)
+                    </dt>
+                    <dd class="col-sm-10 inputCampo">
+                        @Html.DisplayFor(model => model.ValorVenda)
+                    </dd>
+                </div>
+            </div>
+
+            <div class="quintaLinha">
+                <dt class="col-sm-2 tituloCampo fs-3">
+                    @Html.DisplayNameFor(model => model.QtdeEstoque)
+                </dt>
+                <dd class="col-sm-10 inputCampo">
+                    @Html.DisplayFor(model => model.QtdeEstoque)
+                </dd>
+            </div>
+
+            <div class="quintaLinha">
+                <dt class="col-sm-2 tituloCampo fs-3">
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </dt>
+                <dd class="col-sm-10 inputCampoDesc">
+                    @Html.DisplayFor(model => model.Descricao)
+                </dd>
+            </div>
+        </div>
+
+        <div class="quadradoDir">
+            <h3 class="letraBranca bold fotosProdutoEscrito fs-4 mb-3">Fotos do Produto</h3>
+            
+            <div class="rolagemVertical">
+                <div class="fotosProduto">
+                    @if (Model.Fotos != null && Model.Fotos.Count > 0)
+                    {
+                        foreach (var foto in Model.Fotos)
+                        {
+                            <div class="previewFoto">
+                                <img src="@foto.ArquivoFoto" class="previewImg" />
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="letraBranca">Nenhuma foto disponível para este produto.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="botaoVoltar">
+        <a asp-action="Index" class="botaoVoltarLista">Voltar</a>
+    </div>
+</div>

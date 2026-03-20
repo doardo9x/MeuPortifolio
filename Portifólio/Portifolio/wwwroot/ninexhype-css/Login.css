@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+}
+
+body {
+    background-color: var(--main-BG-color);
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ninexLogo {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+
+.ninexLogo:hover {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+
+a.esqueci-senha,
+a.crie-conta {
+    color: var(--Destaque-color) !important;
+    text-decoration: underline;
+}
+
+a.esqueci-senha:hover,
+a.crie-conta:hover {
+    color: var(--RosaClarinho-color) !important;
+}
+
+.containerLogin {
+    display: flex;
+
+}
+
+.cardLogin {
+    background-color: var(--RoxoForte-color);
+    border-radius: 15px;
+}
+
+.TextWhite {
+    color: white;
+}
+
+.TextRosa {
+    color: var(--Destaque-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input {
+    background-color: #171925;
+    color: white;
+    border: 0;
+}
+
+label {
+    background-color: #171925;
+    color: rgb(0, 0, 0);
+    border: 0;
+    background-color: transparent !important;
+}
+
+.form-control {
+    padding: 0;
+    border: 0;
+}
+
+.main {
+    width: 50%;
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease;
+    padding: 0;
+
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Animação */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);   
+    }
+}
+
+.main:focus-within {
+    outline: 2px solid var(--RoxoClaro-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaro-color);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    padding: 10px;
+}
+
+.letraBranca {
+    color: white;
+}
+
+.inputCampo {
+    background-color: var(--CinzaFraco-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.inputCampo:focus {
+    outline: none;
+    border: 1px solid var(--RoxoClaro-color);
+    box-shadow: 0 0 0 1px var(--RoxoClaro-color);
+    transition: all 0.1s ease;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--CinzaFraco-color) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    border: none !important;
+    outline: none !important;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--CinzaFraco-color) inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.inputCampo:focus,
+input:-webkit-autofill:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.divBotao {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botaoEntrar {
+    background-color: var(--RoxoClaro-color) !important;
+    border-radius: 50px;
+    width: 50%;
+    padding: 5px;
+    font-weight: 600;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.botaoEntrar:hover {
+    transition: 0.2s;
+    background-color: var(--Destaque-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+}
+
+.containerManterConectado {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input.checkboxConexao[type="checkbox"] {
+    /* remove estilo padrão */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* aparência base */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #a259ff;
+    /* borda roxa */
+    border-radius: 50%;
+    /* deixa redondo */
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* quando estiver marcado */
+input.checkboxConexao[type="checkbox"]:checked {
+    background-color: #a259ff;
+    /* roxo de fundo */
+    border-color: #a259ff;
+}
+
+/* desenha o "check" (✔) manualmente */
+input.checkboxConexao[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* opcional: efeito hover */
+input.checkboxConexao[type="checkbox"]:hover {
+    border-color: #b57cff;
+    box-shadow: 0 0 6px #a259ff55;
+}
+
+#Nome-error, #Email-error, 
+#Senha-error, #ConfirmacaoSenha-error
+{
+    color: red;
+}
+
+@media(max-width: 699px) {
+    .main {
+        width: 90%;
+    }
+}

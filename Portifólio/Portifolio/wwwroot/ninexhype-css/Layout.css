@@ -1,0 +1,198 @@
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --Destaque-color: #E75DFF;
+    --RoxoFraco-color: #865DFF;
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(16, 21, 36);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/* Footer */
+footer {
+    background-color: #171925;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.tituloFooter {
+    color: #E75DFF;
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.contatoFooter {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid #865DFF;
+    border-radius: 5px;
+}
+
+.redesSociais {
+    height: 100px;
+    padding: 20px;
+}
+
+.iconsRedes {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.iconRede {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101524;
+    border-radius: 5px;
+}
+
+.parceriaEmail {
+    height: 100px;
+    padding: 20px;
+}
+
+.headerFooter {
+    width: 100%;
+    height: 50%;
+    font-weight: 500;
+}
+
+.headerEmail {
+    width: 100%;
+    background-color: #101524;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 400;
+    gap: 10px;
+}
+
+.telefone {
+    width: 20%;
+    height: 100px;
+    padding: 20px;
+}
+
+.numeroTelefone {
+    font-weight: 400;
+    width: 100%;
+    background-color: #101524;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 400;
+    gap: 10px;
+}
+
+.direitosAutorais {
+    width: 90%;
+    font-size: 20px;
+    padding: 1rem;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsividade do footer */
+@media(max-width: 1000px) {
+    .contatoFooter {
+        width: 98%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .redesSociais {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .iconsRedes {
+        display: flex;
+        justify-content: center;
+    }
+
+    .iconRede {
+        background-color: transparent;
+    }
+
+    .parceriaEmail {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .headerEmail {
+        background-color: transparent;
+    }
+
+    .telefone {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .numeroTelefone {
+        background-color: transparent;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .HeaderMobile{
+        display: none;
+    }
+}
+@media screen and (max-width: 699px) {
+    Header {
+        display: none;
+    }
+
+    .parceriaEmail {
+        display: none;
+    }
+
+    .HeaderMobile{
+        padding-top: 20px;
+    }
+}
+
+.nav-item.dropdown {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+.dropdown-menu {
+    z-index: 99999 !important;
+    position: absolute !important;
+}

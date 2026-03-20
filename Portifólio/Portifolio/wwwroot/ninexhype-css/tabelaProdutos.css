@@ -1,0 +1,138 @@
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.tituloGerenciar {
+    font-size: 40px;
+    color: white;
+    margin-left: 3vh;
+}
+
+.table th {
+    background-color: var(--CinzaFraco-color) !important;
+    color: white; 
+    font-weight: 600 !important;
+}
+
+.table {
+    width: 97%;
+    border: 1px solid var(--Destaque-color);
+}
+
+.tabela {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemTabela {
+    text-align: justify;
+}
+
+.itemTabela.td {
+    height: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+tr, td {
+    text-align: center;
+}
+
+.tdDesc {
+    text-align: justify !important;
+}
+
+.botaoEdit{
+    height: auto;
+    width: auto;
+    background-color: var(--Amarelo);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoEdit:hover{
+    background-color: var(--AmareloHover);
+}
+
+.botaoDetails{
+    height: auto;
+    width: auto;
+    background-color: var(--CinzaClaro);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDetails:hover{
+    background-color: var(--CinzaClaroHover);
+}
+
+.botaoDelete{
+    height: auto;
+    width: auto;
+    background-color: var(--VermelhoFav-color);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDelete:hover{
+    background-color: var(--VermelhoFavHover-color);
+}
+
+.divBotoes {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.divBotao {
+    justify-content: center;
+    align-items: center;
+}
+
+.botoesGerenciar{
+    color: white;
+    padding: 10px;
+}
+
+.btnAddProduto{
+    height: 40px;
+    width: 200px;
+    background-color: red;
+    margin-left: 3vh;
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    color: var(--VerdeCarrinho-color);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--VerdeCarrinho-color);
+    text-decoration: none;
+}
+
+.btnAddProduto:hover {
+    background-color: var(--CinzaClaroHover);
+}

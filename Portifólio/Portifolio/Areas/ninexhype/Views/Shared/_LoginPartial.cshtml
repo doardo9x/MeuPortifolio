@@ -1,0 +1,61 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+@if (!SignInManager.IsSignedIn(User))
+{
+    <!-- Usuário não está logado → ícone -->
+    <a asp-action="Login" asp-controller="Account" class="me-2">
+        <i class="icones fa-regular fa-circle-user"></i>
+    </a>
+}
+else
+{
+    <!-- Usuário logado → foto padrão -->
+    <div class="nav-item dropdown me-2">
+        <button class="nav-link text-white dropdown-toggle" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+
+            <img src="~/ninexhype-img/PerfilUsuario/perfilVazio.png"
+                 alt="Foto de perfil"
+                 style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+
+        </button>
+
+        <ul class="dropdown-menu" style="position:absolute!important; margin-left: -200px!important; width:250px">
+
+            <li>
+                <a class="dropdown-item" asp-action="Index" asp-controller="Perfil">
+                    <i class="bi bi-house"></i> Meu Perfil
+                </a>
+            </li>
+
+            @* PERMISSÃO DE ADMIN *@
+            @if (User.IsInRole("Administrador") || User.IsInRole("Funcionário"))
+            {
+                <li>
+                    <a class="dropdown-item white" asp-action="Index" asp-controller="Home">
+                        <i class="bi bi-house"></i> Voltar para o Início
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item" asp-action="Index" asp-controller="Admin">
+                        <i class="bi bi-receipt"></i> Área Administrativa
+                    </a>
+                </li>
+            }
+
+            <li>
+                <form method="POST" asp-action="Logout" asp-controller="Account">
+                    <button type="submit" class="dropdown-item align-middle">
+                        <i class="bi bi-door-closed"></i> Sair
+                    </button>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+}
+
+<link rel="stylesheet" href="~/ninexhype-css/LoginPartial.css" />
