@@ -376,7 +376,7 @@ body.menu-open #content  { margin-left: 280px; }
 .ia-page { max-width: 760px; }
 
 #chat-box {
-    height: 400px;
+    height: 300px;
     overflow-y: auto;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
@@ -388,6 +388,7 @@ body.menu-open #content  { margin-left: 280px; }
     flex-direction: column;
     gap: 12px;
     scroll-behavior: smooth;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .message {

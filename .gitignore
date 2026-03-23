@@ -34,3 +34,6 @@ appsettings.Development.json
 
 # Imagens locais (adicione as suas ao projeto manualmente)
 wwwroot/img/
+
+appsettings.*.json
+appsettings.json

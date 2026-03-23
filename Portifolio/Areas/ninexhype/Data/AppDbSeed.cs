@@ -95,203 +95,203 @@ public class AppDbSeed
         List<ProdutoFoto> produtoFotos = new List<ProdutoFoto>
         {
             // Produto 1 - Nike Air Force 1
-            new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "/ninexhype-img/500x500/NikeAirForceOne1.png"},
-            new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "/ninexhype-img/500x500/NikeAirForceOne2.png"},
-            new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "/ninexhype-img/500x500/NikeAirForceOne3.png"},
+            new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne1.png"},
+            new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne2.png"},
+            new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne3.png"},
 
             // Produto 2 - Adidas Ultraboost
-            new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "/ninexhype-img/500x500/AdidasUltraboost1.png"},
-            new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "/ninexhype-img/500x500/AdidasUltraboost2.png"},
-            new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "/ninexhype-img/500x500/AdidasUltraboost3.png"},
+            new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost1.png"},
+            new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost2.png"},
+            new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost3.png"},
 
             // Produto 3 - Puma RS-X
-            new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "/ninexhype-img/500x500/PumaRS-X1.png"},
-            new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "/ninexhype-img/500x500/PumaRS-X2.png"},
-            new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "/ninexhype-img/500x500/PumaRS-X3.png"},
+            new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X1.png"},
+            new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X2.png"},
+            new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X3.png"},
 
             // Produto 4 - Vans Old Skool
-            new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "/ninexhype-img/500x500/VansOldSkool1.png"},
-            new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "/ninexhype-img/500x500/VansOldSkool2.png"},
-            new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "/ninexhype-img/500x500/VansOldSkool3.png"},
+            new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool1.png"},
+            new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool2.png"},
+            new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool3.png"},
 
             // Produto 5 - New Balance 574
-            new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "/ninexhype-img/500x500/NewBalance574_1.png" },
-            new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "/ninexhype-img/500x500/NewBalance574_2.png" },
-            new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "/ninexhype-img/500x500/NewBalance574_3.png" },
+            new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_1.png" },
+            new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_2.png" },
+            new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_3.png" },
 
             // Produto 6 - Converse Chuck Taylor
-            new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "/ninexhype-img/500x500/ConverseChuckTaylor1.png" },
-            new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "/ninexhype-img/500x500/ConverseChuckTaylor2.png" },
-            new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "/ninexhype-img/500x500/ConverseChuckTaylor3.png" },
+            new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor1.png" },
+            new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor2.png" },
+            new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor3.png" },
 
             // Produto 7 - Asics Gel-Kayano 28
-            new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "/ninexhype-img/500x500/AsicsGel-Kayano28_1.png" },
-            new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "/ninexhype-img/500x500/AsicsGel-Kayano28_2.png" },
-            new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "/ninexhype-img/500x500/AsicsGel-Kayano28_3.png" },
+            new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_1.png" },
+            new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_2.png" },
+            new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_3.png" },
 
             // Produto 8 - Nike Dunk Low
 
             // AINDA NAO PEGAMOS AS FOTOS
-            new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "/ninexhype-img/500x500/NikeDunkLow1.png" },
-            new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "/ninexhype-img/500x500/NikeDunkLow2.png" },
-            new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "/ninexhype-img/500x500/NikeDunkLow3.png" },
+            new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow1.png" },
+            new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow2.png" },
+            new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow3.png" },
 
             // Produto 9 - Mizuno Wave Prophecy
-            new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "/ninexhype-img/500x500/MizunoWaveProphecy1.png" },
-            new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "/ninexhype-img/500x500/MizunoWaveProphecy2.png" },
-            new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "/ninexhype-img/500x500/MizunoWaveProphecy3.png" },
+            new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy1.png" },
+            new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy2.png" },
+            new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy3.png" },
 
             // Produto 10 - Fila Disruptor II
-            new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "/ninexhype-img/500x500/FilaDisruptorII1.png"},
-            new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "/ninexhype-img/500x500/FilaDisruptorII2.png"},
-            new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "/ninexhype-img/500x500/FilaDisruptorII3.png"},
+            new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII1.png"},
+            new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII2.png"},
+            new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII3.png"},
 
             // Produto 11 - Reebok Classic
-            new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "/ninexhype-img/500x500/ReebokClassic1.png"},
-            new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "/ninexhype-img/500x500/ReebokClassic2.png"},
-            new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "/ninexhype-img/500x500/ReebokClassic3.png"},
+            new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic1.png"},
+            new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic2.png"},
+            new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic3.png"},
 
             // Produto 12 - Under Armour HOVR
-            new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "/ninexhype-img/500x500/UnderArmourHOVR1.png"},
-            new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "/ninexhype-img/500x500/UnderArmourHOVR2.png"},
-            new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "/ninexhype-img/500x500/UnderArmourHOVR3.png"},
+            new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR1.png"},
+            new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR2.png"},
+            new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR3.png"},
 
             // Produto 13 - Jordan 1 Mid
-            new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "/ninexhype-img/500x500/Jordan1Mid1.png"},
-            new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "/ninexhype-img/500x500/Jordan1Mid2.png"},
-            new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "/ninexhype-img/500x500/Jordan1Mid3.png"},
+            new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid1.png"},
+            new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid2.png"},
+            new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid3.png"},
 
             // Produto 14 - Oakley Modoc
-            new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "/ninexhype-img/500x500/OakleyModoc1.png"},
-            new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "/ninexhype-img/500x500/OakleyModoc2.png"},
-            new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "/ninexhype-img/500x500/OakleyModoc3.png"},
+            new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc1.png"},
+            new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc2.png"},
+            new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc3.png"},
 
             // Produto 15 - Nike ZoomX Vaporfly
-            new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "/ninexhype-img/500x500/NikeZoomXVaporfly1.png"},
-            new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "/ninexhype-img/500x500/NikeZoomXVaporfly2.png"},
-            new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "/ninexhype-img/500x500/NikeZoomXVaporfly3.png"},
+            new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly1.png"},
+            new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly2.png"},
+            new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly3.png"},
 
             // Produto 16 - Camiseta Oversized Branca
-            new ProdutoFoto { Id = 46, ProdutoId = 16, ArquivoFoto = "/ninexhype-img/500x500/CamisetaOversizedBranca1.png"},
-            new ProdutoFoto { Id = 47, ProdutoId = 16, ArquivoFoto = "/ninexhype-img/500x500/CamisetaOversizedBranca2.png"},
-            new ProdutoFoto { Id = 48, ProdutoId = 16, ArquivoFoto = "/ninexhype-img/500x500/CamisetaOversizedBranca3.png"},
+            new ProdutoFoto { Id = 46, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
+            new ProdutoFoto { Id = 47, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
+            new ProdutoFoto { Id = 48, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
 
             // Produto 17 - Calça Cargo Preta
-            new ProdutoFoto { Id = 49, ProdutoId = 17, ArquivoFoto = "/ninexhype-img/500x500/CalcaCargoPreta1.png"},
-            new ProdutoFoto { Id = 50, ProdutoId = 17, ArquivoFoto = "/ninexhype-img/500x500/CalcaCargoPreta2.png"},
-            new ProdutoFoto { Id = 51, ProdutoId = 17, ArquivoFoto = "/ninexhype-img/500x500/CalcaCargoPreta3.png"},
+            new ProdutoFoto { Id = 49, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
+            new ProdutoFoto { Id = 50, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
+            new ProdutoFoto { Id = 51, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
 
             // Produto 18 - Jaqueta Corta-Vento
-            new ProdutoFoto { Id = 52, ProdutoId = 18, ArquivoFoto = "/ninexhype-img/500x500/JaquetaCortaVento.png"},
-            new ProdutoFoto { Id = 53, ProdutoId = 18, ArquivoFoto = "/ninexhype-img/500x500/JaquetaCorta-Vento2.png"},
-            new ProdutoFoto { Id = 54, ProdutoId = 18, ArquivoFoto = "/ninexhype-img/500x500/JaquetaCorta-Vento3.png"},
+            new ProdutoFoto { Id = 52, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCortaVento.png"},
+            new ProdutoFoto { Id = 53, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
+            new ProdutoFoto { Id = 54, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
 
             // Produto 19 - Moletom Liso com Capuz
-            new ProdutoFoto { Id = 55, ProdutoId = 19, ArquivoFoto = "/ninexhype-img/500x500/MoletomLisoCapuz1.png"},
-            new ProdutoFoto { Id = 56, ProdutoId = 19, ArquivoFoto = "/ninexhype-img/500x500/MoletomLisoCapuz2.png"},
-            new ProdutoFoto { Id = 57, ProdutoId = 19, ArquivoFoto = "/ninexhype-img/500x500/MoletomLisoCapuz3.png"},
+            new ProdutoFoto { Id = 55, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
+            new ProdutoFoto { Id = 57, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
 
             // Produto 20 - Bermuda de Sarja Bege
-            new ProdutoFoto { Id = 58, ProdutoId = 20, ArquivoFoto = "/ninexhype-img/500x500/BermudaSarjaBege1.png"},
-            new ProdutoFoto { Id = 59, ProdutoId = 20, ArquivoFoto = "/ninexhype-img/500x500/BermudaSarjaBege2.png"},
-            new ProdutoFoto { Id = 60, ProdutoId = 20, ArquivoFoto = "/ninexhype-img/500x500/BermudaSarjaBege3.png"},
+            new ProdutoFoto { Id = 58, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 59, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
+            new ProdutoFoto { Id = 60, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
 
             // Produto 21 - Camisa Social Slim
-            new ProdutoFoto { Id = 61, ProdutoId = 21, ArquivoFoto = "/ninexhype-img/500x500/CamisaSocialSlim1.png"},
-            new ProdutoFoto { Id = 62, ProdutoId = 21, ArquivoFoto = "/ninexhype-img/500x500/CamisaSocialSlim2.png"},
-            new ProdutoFoto { Id = 63, ProdutoId = 21, ArquivoFoto = "/ninexhype-img/500x500/CamisaSocialSlim3.png"},
+            new ProdutoFoto { Id = 61, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
+            new ProdutoFoto { Id = 62, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
+            new ProdutoFoto { Id = 63, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
 
             // Produto 22 - Vestido Midi Floral
-            new ProdutoFoto { Id = 64, ProdutoId = 22, ArquivoFoto = "/ninexhype-img/500x500/VestidoMidiFloral1.png"},
-            new ProdutoFoto { Id = 65, ProdutoId = 22, ArquivoFoto = "/ninexhype-img/500x500/VestidoMidiFloral2.png"},
-            new ProdutoFoto { Id = 66, ProdutoId = 22, ArquivoFoto = "/ninexhype-img/500x500/VestidoMidiFloral3.png"},
+            new ProdutoFoto { Id = 64, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
+            new ProdutoFoto { Id = 65, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
+            new ProdutoFoto { Id = 66, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
 
             // Produto 23 - Calça Jeans Skinny
-            new ProdutoFoto { Id = 67, ProdutoId = 23, ArquivoFoto = "/ninexhype-img/500x500/CalçaJeansSkinny1.png"},
-            new ProdutoFoto { Id = 68, ProdutoId = 23, ArquivoFoto = "/ninexhype-img/500x500/CalçaJeansSkinny2.png"},
-            new ProdutoFoto { Id = 69, ProdutoId = 23, ArquivoFoto = "/ninexhype-img/500x500/CalçaJeansSkinny3.png"},
+            new ProdutoFoto { Id = 67, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
+            new ProdutoFoto { Id = 68, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
+            new ProdutoFoto { Id = 69, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
 
             // Produto 24 - Jaqueta Jeans Feminina
-            new ProdutoFoto { Id = 70, ProdutoId = 24, ArquivoFoto = "/ninexhype-img/500x500/JaquetaJeansFeminina1.png"},
-            new ProdutoFoto { Id = 71, ProdutoId = 24, ArquivoFoto = "/ninexhype-img/500x500/JaquetaJeansFeminina2.png"},
-            new ProdutoFoto { Id = 72, ProdutoId = 24, ArquivoFoto = "/ninexhype-img/500x500/JaquetaJeansFeminina3.png"},
+            new ProdutoFoto { Id = 70, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
+            new ProdutoFoto { Id = 71, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
+            new ProdutoFoto { Id = 72, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina3.png"},
 
             // Produto 25 - Shorts de Moletom
-            new ProdutoFoto { Id = 73, ProdutoId = 25, ArquivoFoto = "/ninexhype-img/500x500/ShortsMoletom1.png"},
-            new ProdutoFoto { Id = 74, ProdutoId = 25, ArquivoFoto = "/ninexhype-img/500x500/ShortsMoletom2.png"},
-            new ProdutoFoto { Id = 75, ProdutoId = 25, ArquivoFoto = "/ninexhype-img/500x500/ShortsMoletom3.png"},
+            new ProdutoFoto { Id = 73, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
+            new ProdutoFoto { Id = 74, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
+            new ProdutoFoto { Id = 75, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
 
             // Produto 26 - Camiseta Polo Preta Feminina
-            new ProdutoFoto { Id = 76, ProdutoId = 26, ArquivoFoto = "/ninexhype-img/500x500/CamisetaPoloPretaFeminina1.png"},
-            new ProdutoFoto { Id = 77, ProdutoId = 26, ArquivoFoto = "/ninexhype-img/500x500/CamisetaPoloPretaFeminina2.png"},
-            new ProdutoFoto { Id = 78, ProdutoId = 26, ArquivoFoto = "/ninexhype-img/500x500/CamisetaPoloPretaFeminina3.png"},
+            new ProdutoFoto { Id = 76, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
+            new ProdutoFoto { Id = 77, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
+            new ProdutoFoto { Id = 78, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
 
             // Produto 27 - Macacão Feminino
-            new ProdutoFoto { Id = 79, ProdutoId = 27, ArquivoFoto = "/ninexhype-img/500x500/MacacãoFeminino1.png"},
-            new ProdutoFoto { Id = 80, ProdutoId = 27, ArquivoFoto = "/ninexhype-img/500x500/MacacãoFeminino2.png"},
-            new ProdutoFoto { Id = 81, ProdutoId = 27, ArquivoFoto = "/ninexhype-img/500x500/MacacãoFeminino3.png"},
+            new ProdutoFoto { Id = 79, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
+            new ProdutoFoto { Id = 80, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
+            new ProdutoFoto { Id = 81, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
 
             // Produto 28 - Blusa Cropped Texturizada
-            new ProdutoFoto { Id = 82, ProdutoId = 28, ArquivoFoto = "/ninexhype-img/500x500/BlusaCroppedTexturizada1.png"},
-            new ProdutoFoto { Id = 83, ProdutoId = 28, ArquivoFoto = "/ninexhype-img/500x500/BlusaCroppedTexturizada2.png"},
-            new ProdutoFoto { Id = 84, ProdutoId = 28, ArquivoFoto = "/ninexhype-img/500x500/BlusaCroppedTexturizada3.png"},
+            new ProdutoFoto { Id = 82, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
+            new ProdutoFoto { Id = 83, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
+            new ProdutoFoto { Id = 84, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
 
             // Produto 29 - Camisa Polo Texturizada Masculina Marrom
-            new ProdutoFoto { Id = 85, ProdutoId = 29, ArquivoFoto = "/ninexhype-img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
-            new ProdutoFoto { Id = 86, ProdutoId = 29, ArquivoFoto = "/ninexhype-img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
-            new ProdutoFoto { Id = 87, ProdutoId = 29, ArquivoFoto = "/ninexhype-img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
+            new ProdutoFoto { Id = 85, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
+            new ProdutoFoto { Id = 86, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
+            new ProdutoFoto { Id = 87, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
 
             // Produto 30 - Regata Dry Fit
-            new ProdutoFoto { Id = 88, ProdutoId = 30, ArquivoFoto = "/ninexhype-img/500x500/RegataDryFit1.png"},
-            new ProdutoFoto { Id = 89, ProdutoId = 30, ArquivoFoto = "/ninexhype-img/500x500/RegataDryFit2.png"},
-            new ProdutoFoto { Id = 90, ProdutoId = 30, ArquivoFoto = "/ninexhype-img/500x500/RegataDryFit3.png"},
+            new ProdutoFoto { Id = 88, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
+            new ProdutoFoto { Id = 89, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
+            new ProdutoFoto { Id = 90, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
 
             // Produto 41 -
-            new ProdutoFoto { Id = 91, ProdutoId = 41, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeAirMaxExcee1.png"},
-            new ProdutoFoto { Id = 92, ProdutoId = 41, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeAirMaxExcee2.png"},
-            new ProdutoFoto { Id = 93, ProdutoId = 41, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeAirMaxExcee3.png"},
+            new ProdutoFoto { Id = 91, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee1.png"},
+            new ProdutoFoto { Id = 92, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee2.png"},
+            new ProdutoFoto { Id = 93, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee3.png"},
 
             // Produto 42 - 
-            new ProdutoFoto { Id = 94, ProdutoId = 42, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeMCTrainerIII1.png"},
-            new ProdutoFoto { Id = 95, ProdutoId = 42, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeMCTrainerIII2.png"},
-            new ProdutoFoto { Id = 96, ProdutoId = 42, ArquivoFoto = "/ninexhype-img/500x500/TênisNikeMCTrainerIII3.png"},
+            new ProdutoFoto { Id = 94, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII1.png"},
+            new ProdutoFoto { Id = 95, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII2.png"},
+            new ProdutoFoto { Id = 96, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII3.png"},
 
             // Produto 43 -
-            new ProdutoFoto { Id = 97, ProdutoId = 43, ArquivoFoto = "/ninexhype-img/500x500/Women'sAirForce1'07Low1.png"},
-            new ProdutoFoto { Id = 98, ProdutoId = 43, ArquivoFoto = "/ninexhype-img/500x500/Women'sAirForce1'07Low2.png"},
-            new ProdutoFoto { Id = 99, ProdutoId = 43, ArquivoFoto = "/ninexhype-img/500x500/Women'sAirForce1'07Low3.png"},
+            new ProdutoFoto { Id = 97, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low1.png"},
+            new ProdutoFoto { Id = 98, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low2.png"},
+            new ProdutoFoto { Id = 99, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low3.png"},
 
             // Produto 44 -
-            new ProdutoFoto { Id = 100, ProdutoId = 44, ArquivoFoto = "/ninexhype-img/500x500/COURTBLOCK1.png"},
-            new ProdutoFoto { Id = 101, ProdutoId = 44, ArquivoFoto = "/ninexhype-img/500x500/COURTBLOCK2.png"},
-            new ProdutoFoto { Id = 102, ProdutoId = 44, ArquivoFoto = "/ninexhype-img/500x500/COURTBLOCK3.png"},
+            new ProdutoFoto { Id = 100, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK1.png"},
+            new ProdutoFoto { Id = 101, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK2.png"},
+            new ProdutoFoto { Id = 102, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK3.png"},
 
             // Produto 45 -
-            new ProdutoFoto { Id = 103, ProdutoId = 45, ArquivoFoto = "/ninexhype-img/500x500/StellaMcCartneyUltraboostV1.png"},
-            new ProdutoFoto { Id = 104, ProdutoId = 45, ArquivoFoto = "/ninexhype-img/500x500/StellaMcCartneyUltraboostV2.png"},
-            new ProdutoFoto { Id = 105, ProdutoId = 45, ArquivoFoto = "/ninexhype-img/500x500/StellaMcCartneyUltraboostV3.png"},
+            new ProdutoFoto { Id = 103, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV1.png"},
+            new ProdutoFoto { Id = 104, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV2.png"},
+            new ProdutoFoto { Id = 105, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV3.png"},
 
             // Produto 46 -
-            new ProdutoFoto { Id = 106, ProdutoId = 46, ArquivoFoto = "/ninexhype-img/500x500/JabbarHi1.png"},
-            new ProdutoFoto { Id = 107, ProdutoId = 46, ArquivoFoto = "/ninexhype-img/500x500/JabbarHi2.png"},
-            new ProdutoFoto { Id = 108, ProdutoId = 46, ArquivoFoto = "/ninexhype-img/500x500/JabbarHi3.png"},
+            new ProdutoFoto { Id = 106, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi1.png"},
+            new ProdutoFoto { Id = 107, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi2.png"},
+            new ProdutoFoto { Id = 108, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi3.png"},
 
             // Produto 47 -
-            new ProdutoFoto { Id = 109, ProdutoId = 47, ArquivoFoto = "/ninexhype-img/500x500/Prospect1.png"},
-            new ProdutoFoto { Id = 110, ProdutoId = 47, ArquivoFoto = "/ninexhype-img/500x500/Prospect1.png"},
-            new ProdutoFoto { Id = 111, ProdutoId = 47, ArquivoFoto = "/ninexhype-img/500x500/Prospect1.png"},
+            new ProdutoFoto { Id = 109, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
+            new ProdutoFoto { Id = 110, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
+            new ProdutoFoto { Id = 111, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
 
             // Imagens produtos Destaques
-            new ProdutoFoto { Id = 112, ProdutoId = 31, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
-            new ProdutoFoto { Id = 113, ProdutoId = 32, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
-            new ProdutoFoto { Id = 114, ProdutoId = 33, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
-            new ProdutoFoto { Id = 115, ProdutoId = 34, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
-            new ProdutoFoto { Id = 116, ProdutoId = 35, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
-            new ProdutoFoto { Id = 117, ProdutoId = 36, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
-            new ProdutoFoto { Id = 118, ProdutoId = 37, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
-            new ProdutoFoto { Id = 119, ProdutoId = 38, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
-            new ProdutoFoto { Id = 120, ProdutoId = 39, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
-            new ProdutoFoto { Id = 121, ProdutoId = 40, ArquivoFoto = "/ninexhype-img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
+            new ProdutoFoto { Id = 112, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
+            new ProdutoFoto { Id = 113, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
+            new ProdutoFoto { Id = 114, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
+            new ProdutoFoto { Id = 115, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
+            new ProdutoFoto { Id = 116, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
+            new ProdutoFoto { Id = 117, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
+            new ProdutoFoto { Id = 118, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
+            new ProdutoFoto { Id = 119, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
+            new ProdutoFoto { Id = 120, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
+            new ProdutoFoto { Id = 121, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
 
         };
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);
@@ -320,24 +320,28 @@ public class AppDbSeed
         #endregion
 
         #region Populate Usuário
-            List<Usuario> usuarios = new()
+        List<Usuario> usuarios = new()
+        {
+            new Usuario()
             {
-                new Usuario()
-                {
-                    Id = "a1b2c3d4-e5f6-7890-abcd-ef1234567890", // ← novo GUID único
-                    Email = "ninexhype@9xhype.com",
-                    NormalizedEmail = "NINEXHYPE@9XHYPE.COM",
-                    UserName = "9xHype",
-                    NormalizedUserName = "9XHYPE",
-                    LockoutEnabled = true,
-                    EmailConfirmed = true,
-                    Nome = "9x Hype",
-                    DataNascimento = new DateTime(1981, 8, 5),
-                    Foto = "~/ninehype-img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
-                }
-            };
-            usuarios[0].PasswordHash = "AQAAAAIAAYagAAAAEH+c3nDNMPMUl3lSTxBYCMR9t7HPVY7eZDsKSrO7VGWEHMXnfAc1s4l0D6DzVD1cBQ==";
-            builder.Entity<Usuario>().HasData(usuarios);
+                Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                Email = "ninexhype@9xhype.com",
+                NormalizedEmail = "NINEXHYPE@9XHYPE.COM",
+                UserName = "9xHype",
+                NormalizedUserName = "9XHYPE",
+                LockoutEnabled = true,
+                EmailConfirmed = true,
+                Nome = "9x Hype",
+                DataNascimento = DateTime.Parse("05/08/1981"),
+                Foto = "~/img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
+            }
+        };
+        foreach (var user in usuarios)
+        {
+            PasswordHasher<IdentityUser> pass = new();
+            user.PasswordHash = pass.HashPassword(user, "123456");
+        }
+        builder.Entity<Usuario>().HasData(usuarios);
         #endregion
 
         #region Populate UserRole - Usuário com Perfil

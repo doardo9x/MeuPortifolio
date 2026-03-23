@@ -23,10 +23,9 @@
     <nav id="sidebar">
         <button class="close-btn" onclick="closeMenu()">×</button>
         <ul>
-            <li><a asp-controller="Home"    asp-action="Index">Início</a></li>
-            <li><a asp-controller="Home"    asp-action="Projetos">Projetos</a></li>
-            <li><a asp-controller="Ia"      asp-action="Index">Inteligência Artificial</a></li>
-            <li><a asp-controller="Home"    asp-action="Contato">Contato</a></li>
+            <li><a asp-controller="Home" asp-action="Index">Início</a></li>
+            <li><a asp-controller="Home" asp-action="Projetos">Projetos</a></li>
+            <li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
         </ul>
     </nav>
 
@@ -36,7 +35,7 @@
     </main>
 
     <script src="~/js/particles.js" asp-append-version="true"></script>
-    <script src="~/js/site.js"      asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
