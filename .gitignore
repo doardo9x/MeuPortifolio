@@ -32,8 +32,6 @@ appsettings.Development.json
 # Logs
 *.log
 
-# Imagens locais (adicione as suas ao projeto manualmente)
-wwwroot/img/
 
 appsettings.*.json
 appsettings.json

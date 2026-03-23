@@ -1,0 +1,153 @@
+/* --- Importação de Fonte Temática (Opcional, mas recomendado) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* ADICIONE UMA IMAGEM DE FUNDO TEMÁTICA AQUI */
+    background-image: url('/pokedex-img/bg-pokedex.png'); 
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* --- Estilização do Cabeçalho e Filtros --- */
+.jumbotron-pokedex {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 5px solid #dc3545; /* Vermelho Pokédex */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 0 0 20px 20px;
+}
+
+.pokedex-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #dc3545;
+    text-shadow: 2px 2px 0 #fff, 3px 3px 0 #333;
+    font-size: 3rem;
+}
+
+.filter-group {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Estilo Badge para os botões de tipo */
+.btn-filter {
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-weight: bold;
+    border: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-filter.active {
+    border-color: #333;
+    transform: scale(1.05);
+}
+
+
+/* --- Estilização da Grid e Cartões --- */
+.album-pokedex {
+    background: transparent !important;
+}
+
+.pokemon-card-container {
+    perspective: 1000px; /* Para efeito 3D no hover */
+}
+
+.pokedex-card {
+    border: 4px solid #333;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Fundo do cartão baseado no tipo principal (via JS) */
+.pokedex-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 60%;
+    background-color: rgba(0,0,0,0.05); /* Fundo padrão leve */
+    z-index: 1;
+    border-bottom: 4px solid #333;
+}
+
+.pokedex-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: #dc3545;
+}
+
+.pokedex-card-img-container {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.pokedex-card img {
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.pokedex-card-body {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border-top: 4px solid #333;
+    padding: 15px;
+}
+
+.pokemon-number {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #666;
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.pokemon-name {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 5px;
+    color: #333;
+}
+
+.pokedex-badges .badge-tipo {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 50px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* --- Mensagem de Zero Pokemon --- */
+#zeroPokemon.pokedex-error {
+    background: rgba(255, 255, 255, 0.9);
+    border: 4px dashed #dc3545;
+    border-radius: 20px;
+    padding: 40px;
+    color: #dc3545;
+}
