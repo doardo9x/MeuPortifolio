@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (stackDiv) stackDiv.style.opacity = '0';
     if (link)     link.style.opacity     = '0';
 
-    // Pequeño delay para garantir que o layout foi calculado
+    // Pequeno delay para garantir que o layout foi calculado
     setTimeout(() => {
         nomeDiv.style.transition = 'opacity 300ms ease';
         nomeDiv.style.opacity    = '1';

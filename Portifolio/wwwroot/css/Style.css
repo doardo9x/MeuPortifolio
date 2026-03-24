@@ -70,11 +70,9 @@ body::before {
     z-index: 900;
     background: rgba(255,255,255,0.08);
     color: white;
-    border: 1px solid rgba(255,255,255,0.15);
     padding: 10px 18px;
     font-size: 18px;
     font-family: "Arvo", serif;
-    border-radius: 10px;
     cursor: pointer;
     backdrop-filter: blur(8px);
     transition: background 0.2s, border-color 0.2s;
@@ -470,4 +468,196 @@ body.menu-open #content  { margin-left: 280px; }
     .inner-page { padding: 100px 24px 60px; }
 
     .blur-cursor { display: none; }
+}
+
+
+/* ================== Animação entrada dos CARDS ==================*/
+/* 1. Definimos o "filme" da animação */
+@keyframes subirEntrando {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Aplicamos aos cards */
+.projeto-card {
+    opacity: 0; /* Começa invisível */
+    animation: subirEntrando 0.8s ease-out forwards;
+}
+
+/* 3. Efeito de cascata (Delay para cada card) */
+.projeto-card:nth-child(1) { animation-delay: 0.1s; }
+.projeto-card:nth-child(2) { animation-delay: 0.3s; }
+.projeto-card:nth-child(3) { animation-delay: 0.5s; }
+.projeto-card:nth-child(4) { animation-delay: 0.7s; }
+
+/* Garante que o hover continue funcionando após a animação */
+.projeto-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.22);
+    transform: translateY(-5px); /* Um leve float no hover fica elegante */
+    transition: transform 0.3s ease, background 0.2s;
+}
+
+/* ================== Animação entrada do CHAT ==================*/
+/* 1. Definimos a animação (caso ainda não tenha adicionado) */
+@keyframes subirEntrando {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Aplicamos aos elementos da página de IA */
+.ia-page .page-title,
+.ia-page .page-sub,
+#chat-box,
+.chat-input {
+    opacity: 0; /* Começam invisíveis */
+    animation: subirEntrando 0.7s ease-out forwards;
+}
+
+/* 3. Escalonamento de tempo (Delay) para o efeito cascata */
+
+/* O título aparece primeiro */
+.ia-page .page-title { 
+    animation-delay: 0.1s; 
+}
+
+/* O subtítulo logo depois */
+.ia-page .page-sub { 
+    animation-delay: 0.2s; 
+}
+
+/* O quadro de mensagens surge em seguida */
+#chat-box { 
+    animation-delay: 0.4s; 
+    /* Adicionamos uma transição suave para quando novas mensagens entrarem */
+    transition: all 0.3s ease; 
+}
+
+/* Por fim, o campo de input e o botão */
+.chat-input { 
+    animation-delay: 0.6s; 
+}
+
+/* 4. Bônus: Efeito para as mensagens individuais que surgirem via JS */
+.message {
+    animation: mensagemSurgindo 0.3s ease-out;
+}
+
+@keyframes mensagemSurgindo {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ================== Animação entrada dos CONTATOS ==================*/
+
+/* Estado inicial e animação dos itens de contato */
+.contato-item {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: subirEntrando 0.7s ease-out forwards;
+}
+
+/* Título e subtítulo da página de contato */
+.inner-page .page-title, 
+.inner-page .page-sub {
+    opacity: 0;
+    animation: subirEntrando 0.6s ease-out forwards;
+}
+
+/* --- Delays para efeito cascata --- */
+
+/* Títulos primeiro */
+.inner-page .page-title { animation-delay: 0.1s; }
+.inner-page .page-sub   { animation-delay: 0.2s; }
+
+/* Itens da lista um por um */
+.contato-item:nth-child(1) { animation-delay: 0.4s; }
+.contato-item:nth-child(2) { animation-delay: 0.6s; }
+.contato-item:nth-child(3) { animation-delay: 0.8s; }
+
+/* Ajuste no hover para não conflitar com a animação */
+.contato-item:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateX(10px); /* Um leve deslize para o lado fica bem em listas de contato */
+    transition: all 0.3s ease;
+}
+
+
+/* ============= personalização barra de rolagem ===================== */
+/* 1. Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px; /* Mais fina para ser elegante */
+}
+
+/* 2. O "trilho" (fundo da barra) */
+::-webkit-scrollbar-track {
+    background: #000; /* Fundo preto para sumir com o fundo do site */
+}
+
+/* 3. O "polegar" (a parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15); /* Branco bem transparente */
+    border-radius: 10px;
+    border: 2px solid #000; /* Cria um espaçamento interno falso */
+    transition: background 0.3s;
+}
+
+/* 4. Efeito ao passar o mouse ou clicar */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); /* Fica mais visível ao interagir */
+}
+
+/* Para o Firefox (que usa uma sintaxe diferente) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) #000;
+}
+
+
+/* Cores vibrantes otimizadas para fundo preto (#000000) */
+
+.github {
+  color: #ff6a00; /* O branco puro é o melhor destaque para o GitHub no preto */
+}
+
+.groq {
+  color: #ff0000; /* Um laranja neon mais aceso que o original */
+}
+
+.ia {
+  color: #00F2FF; /* Ciano elétrico (estilo interface futurista/IA) */
+}
+
+.json {
+  color: #CBF30D; /* Verde-limão "Matrix", excelente para sintaxe de código */
+}
+
+.pokemon {
+  color: #FFDE00; /* Amarelo Pikachu intenso */
+}
+
+.net {
+  color: #A688FF; /* Roxo vibrante (variante clara do .NET Purple) */
+}
+
+.sql {
+  color: #ffffff; /* Azul brilhante e nítido */
 }

@@ -17,7 +17,10 @@
     <div class="blur-cursor"></div>
 
     <!-- Botão abrir menu -->
-    <button class="open-btn" onclick="openMenu()">☰ Menu</button>
+    @if (ViewContext.RouteData.Values["Action"]?.ToString() != "Index")
+    {
+        <button class="open-btn" onclick="openMenu()">☰ Menu</button>
+    }
 
     <!-- Menu lateral -->
     <nav id="sidebar">
